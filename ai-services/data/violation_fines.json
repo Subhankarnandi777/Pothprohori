@@ -1,0 +1,200 @@
+[
+  {
+    "id": 1,
+    "violation": "Riding without Helmet",
+    "category": "no_helmet",
+    "vehicle_type": "2W",
+    "state": "",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194D, Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹1,000 and disqualification of Driving License for a period of 3 months."
+  },
+  {
+    "id": 2,
+    "violation": "Riding without Helmet",
+    "category": "no_helmet",
+    "vehicle_type": "2W",
+    "state": "West Bengal",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194D, WB Motor Vehicles Rules",
+    "penalty_details": "Fine of ₹1,000 and license suspension for 3 months (strictly enforced by West Bengal Traffic Police)."
+  },
+  {
+    "id": 3,
+    "violation": "Driving without Seatbelt",
+    "category": "no_seatbelt",
+    "vehicle_type": "4W",
+    "state": "",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194B(1), Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹1,000 for driving without seatbelt or carrying passengers not wearing seatbelts."
+  },
+  {
+    "id": 4,
+    "violation": "Carrying Child without Safety Harness/Seatbelt",
+    "category": "child_safety",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194B(2), Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹1,000 for failing to secure a child below 14 years of age with a safety harness or child restraint system."
+  },
+  {
+    "id": 5,
+    "violation": "Overspeeding (Light Motor Vehicle / Car)",
+    "category": "overspeeding",
+    "vehicle_type": "4W",
+    "state": "",
+    "fine_min": 1000,
+    "fine_max": 2000,
+    "section": "Section 183(1)(i), Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹1,000 to ₹2,000 for Light Motor Vehicles (LMVs) exceeding speed limits."
+  },
+  {
+    "id": 6,
+    "violation": "Overspeeding (Medium/Heavy Goods or Passenger Vehicle)",
+    "category": "overspeeding",
+    "vehicle_type": "HV",
+    "state": "",
+    "fine_min": 2000,
+    "fine_max": 4000,
+    "section": "Section 183(1)(ii), Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹2,000 to ₹4,000 for medium or heavy passenger/goods vehicles exceeding speed limits."
+  },
+  {
+    "id": 7,
+    "violation": "Drunk Driving / Driving under Influence",
+    "category": "drunk_driving",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 10000,
+    "fine_max": 15000,
+    "section": "Section 185, Motor Vehicles Act 2019",
+    "penalty_details": "First Offense: Fine of ₹10,000 and/or up to 6 months imprisonment. Second/Subsequent Offense: Fine of ₹15,000 and/or up to 2 years imprisonment. Applies if BAC exceeds 30mg per 100ml of blood."
+  },
+  {
+    "id": 8,
+    "violation": "Driving without Third-Party Insurance",
+    "category": "no_insurance",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 2000,
+    "fine_max": 4000,
+    "section": "Section 196, Motor Vehicles Act 2019",
+    "penalty_details": "First Offense: Fine of ₹2,000 and/or up to 3 months imprisonment. Subsequent Offense: Fine of ₹4,000 and/or up to 3 months imprisonment."
+  },
+  {
+    "id": 9,
+    "violation": "Driving without a Valid License",
+    "category": "no_dl",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 5000,
+    "fine_max": 5000,
+    "section": "Section 181, Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹5,000 and/or up to 3 months imprisonment for driving a vehicle without holding a valid driving license."
+  },
+  {
+    "id": 10,
+    "violation": "Dangerous Driving / Use of Mobile Phone while Driving",
+    "category": "use_of_phone",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 1000,
+    "fine_max": 5000,
+    "section": "Section 184, Motor Vehicles Act 2019",
+    "penalty_details": "First Offense: Fine of ₹1,000 to ₹5,000 and/or 6 to 12 months imprisonment. Subsequent Offense (within 3 years): Fine of ₹10,000 and/or up to 2 years imprisonment. Covers using handheld devices, jumping red lights, or driving against flow."
+  },
+  {
+    "id": 11,
+    "violation": "Triple Riding (Two Wheeler)",
+    "category": "triple_riding",
+    "vehicle_type": "2W",
+    "state": "",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194C, Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹1,000 and disqualification of driving license for 3 months for carrying more than one pillion rider."
+  },
+  {
+    "id": 12,
+    "violation": "Obstruction to Emergency Vehicles (Ambulance/Fire Brigade)",
+    "category": "emergency_obstruction",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 10000,
+    "fine_max": 10000,
+    "section": "Section 194E, Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹10,000 and/or up to 6 months imprisonment for failing to draw to the side of the road to allow free passage to emergency vehicles."
+  },
+  {
+    "id": 13,
+    "violation": "Juvenile Offense / Underage Driving",
+    "category": "juvenile_offense",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 25000,
+    "fine_max": 25000,
+    "section": "Section 199A, Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹25,000 and up to 3 years imprisonment for the guardian or owner of the vehicle. Cancellation of vehicle registration for 12 months. Juvenile will be tried under the JJ Act and will be ineligible for a driving license until age 25."
+  },
+  {
+    "id": 14,
+    "violation": "Overloading Passenger Capacity",
+    "category": "passenger_overload",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 200,
+    "fine_max": 200,
+    "section": "Section 194A, Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹200 per extra passenger carried beyond the registered seating limit."
+  },
+  {
+    "id": 15,
+    "violation": "Overloading Goods / Cargo",
+    "category": "goods_overload",
+    "vehicle_type": "HV",
+    "state": "",
+    "fine_min": 20000,
+    "fine_max": 40000,
+    "section": "Section 194(1), Motor Vehicles Act 2019",
+    "penalty_details": "Fine of ₹20,000 and an additional ₹2,000 per extra tonne carried beyond the registered payload weight limit."
+  },
+  {
+    "id": 16,
+    "violation": "Driving without Registration Certificate (RC)",
+    "category": "no_rc",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 2000,
+    "fine_max": 5000,
+    "section": "Section 192(1), Motor Vehicles Act 2019",
+    "penalty_details": "First Offense: Fine of ₹2,000 to ₹5,000. Subsequent Offense: Fine of up to ₹10,000 and/or 1 year imprisonment."
+  },
+  {
+    "id": 17,
+    "violation": "Driving without valid Pollution Under Control (PUC) Certificate",
+    "category": "no_puc",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 10000,
+    "fine_max": 10000,
+    "section": "Section 190(2), Motor Vehicles Act 2019",
+    "penalty_details": "Fine of up to ₹10,000 and/or imprisonment for up to 6 months for violating air pollution standards. Disqualification of Driving License for 3 months."
+  },
+  {
+    "id": 18,
+    "violation": "Racing and Speed Trials",
+    "category": "racing",
+    "vehicle_type": "all",
+    "state": "",
+    "fine_min": 5000,
+    "fine_max": 10000,
+    "section": "Section 189, Motor Vehicles Act 2019",
+    "penalty_details": "First Offense: Fine of ₹5,000 and/or up to 1 month imprisonment. Subsequent Offense: Fine of ₹10,000 and/or up to 1 month imprisonment."
+  }
+]

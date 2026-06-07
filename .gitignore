@@ -1,0 +1,10 @@
+__pycache__/
+*.pyc
+*.pyo
+.env
+.env.local
+*.db
+*.sqlite3
+node_modules/
+.next/
+chroma_data/
