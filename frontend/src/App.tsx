@@ -711,10 +711,20 @@ export default function App() {
                     >
                       <option value="no_helmet">Riding without Helmet</option>
                       <option value="no_seatbelt">Driving without Seatbelt</option>
+                      <option value="child_safety">Carrying Child without Safety Harness</option>
                       <option value="overspeeding">Overspeeding / Speed Limit Violation</option>
                       <option value="drunk_driving">Drunk Driving / Driving under Influence</option>
                       <option value="no_insurance">Driving without Third-Party Insurance</option>
-                      <option value="use_of_phone">Use of Mobile Phone while driving</option>
+                      <option value="no_dl">Driving without a Valid License</option>
+                      <option value="use_of_phone">Use of Mobile Phone while Driving</option>
+                      <option value="triple_riding">Triple Riding (Two Wheeler)</option>
+                      <option value="emergency_obstruction">Obstruction to Emergency Vehicles</option>
+                      <option value="juvenile_offense">Underage Driving / Juvenile Offense</option>
+                      <option value="passenger_overload">Overloading Passenger Capacity</option>
+                      <option value="goods_overload">Overloading Goods / Cargo</option>
+                      <option value="no_rc">Driving without Registration Certificate (RC)</option>
+                      <option value="no_puc">Driving without valid PUC Certificate</option>
+                      <option value="racing">Racing and Speed Trials</option>
                     </select>
                   </div>
 

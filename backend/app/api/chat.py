@@ -54,6 +54,32 @@ async def calculate_challan_endpoint(request: ChallanRequest, db: Session = Depe
         if not v_rec:
             raise HTTPException(status_code=404, detail=f"Violation '{request.violation}' not found in database.")
             
+        # Check if the violation is compatible with the selected vehicle type
+        compatible_entry = db.query(FineByState).filter(
+            FineByState.violation_id == v_rec.id,
+            FineByState.vehicle_type.in_([request.vehicle_type, "all"])
+        ).first()
+        
+        if not compatible_entry:
+            vehicle_labels = {
+                "2W": "2-Wheeler",
+                "3W": "3-Wheeler",
+                "4W": "Car / LMV",
+                "HV": "Truck / Heavy Vehicle"
+            }
+            vehicle_label = vehicle_labels.get(request.vehicle_type, request.vehicle_type)
+            return ChallanResponse(
+                violation=v_rec.name,
+                state=request.state or "National",
+                fine_inr=0,
+                repeat=request.repeat,
+                section="N/A",
+                explanation=(
+                    f"Not Applicable: '{v_rec.name}' does not apply to {vehicle_label} vehicles. "
+                    f"Please select a compatible vehicle class."
+                )
+            )
+            
         # 2. Get fine for state and vehicle type (or fallback)
         state_str = request.state or ""
         if state_str.lower() in ["national", "central"]:
