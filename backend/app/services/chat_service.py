@@ -225,15 +225,27 @@ class ChatService:
         from llm.gemini_client import GeminiClient
         client = GeminiClient()
         
-        prompt = """You are DriveLegal AI. Look at this uploaded Traffic Challan image or document.
-Extract the following information in a clear format:
-- Violation details (e.g. No Helmet, Speeding)
-- Vehicle Number (if visible)
-- Fine Amount (₹)
-- Challan Number & Date
-- Offense Location & State
+        prompt = """You are DriveLegal AI. Read the uploaded Indian traffic challan image using OCR.
 
-Provide a simple, clear, and layperson-friendly breakdown of what this means, what section of the Motor Vehicles Act it references, and immediate steps the user should take (e.g. how/where to pay)."""
+Return only a clear Markdown report in this exact structure:
+
+### E-Challan AI Extraction Results
+- **Violation / Offense:** extracted value, or "Not visible"
+- **Section Violated:** extracted law section if printed, otherwise the most likely Motor Vehicles Act section with "inferred"
+- **Fine Amount:** extracted amount in INR, or "Not visible"
+- **Vehicle Number:** extracted value, or "Not visible"
+- **Challan Number:** extracted value, or "Not visible"
+- **Date & Time:** extracted value, or "Not visible"
+- **Offense Location:** extracted value, or "Not visible"
+- **State Jurisdiction:** extracted value, or "Not visible"
+- **Payment Status:** extracted value, or "Not visible"
+
+#### Action Steps
+1. Verify the challan on https://echallan.parivahan.gov.in before paying.
+2. Pay only through an official government or authorized payment portal.
+3. If any extracted field is unclear, say what the user should re-upload or manually verify.
+
+Do not invent challan number, vehicle number, date, location, payment status, or fine amount. If a field is unreadable, write "Not visible"."""
         
         answer = await client.complete_multimodal(
             prompt=prompt,

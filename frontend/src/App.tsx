@@ -1,19 +1,19 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { 
-  MessageSquare, 
-  Calculator, 
-  MapPin, 
-  AlertTriangle, 
-  Send, 
-  Mic, 
-  MicOff, 
-  Volume2, 
-  VolumeX, 
-  Globe, 
-  ShieldAlert, 
-  Settings, 
-  RefreshCw, 
-  Plus, 
+import {
+  MessageSquare,
+  Calculator,
+  MapPin,
+  AlertTriangle,
+  Send,
+  Mic,
+  MicOff,
+  Volume2,
+  VolumeX,
+  Globe,
+  ShieldAlert,
+  Settings,
+  RefreshCw,
+  Plus,
   History,
   Phone,
   FileSearch,
@@ -32,7 +32,7 @@ interface Message {
 
 export default function App() {
   const [activeTab, setActiveTab] = useState<'chat' | 'calculator' | 'ocr' | 'nearby' | 'sos'>('chat');
-  
+
   // Chatbot State
   const [messages, setMessages] = useState<Message[]>([
     {
@@ -110,16 +110,27 @@ export default function App() {
           const lat = position.coords.latitude;
           const lng = position.coords.longitude;
           setGpsCoords({ lat, lng });
-          setGpsLoading(false);
-          // Auto fill user's location based state
-          setSelectedState('Delhi');
-          setCalcState('Delhi');
+
+          fetch(`https://nominatim.openstreetmap.org/reverse?lat=${lat}&lon=${lng}&format=json`)
+            .then(res => res.json())
+            .then(data => {
+              const state = data.address?.state;
+              if (state) {
+                setSelectedState(state);
+                setCalcState(state);
+              }
+            })
+            .catch(e => console.error('Reverse geocoding error:', e))
+            .finally(() => setGpsLoading(false));
         },
         (error) => {
           console.error('Geolocation error:', error.message);
+          alert('Could not detect your location. Please check browser permissions.');
           setGpsLoading(false);
         }
       );
+    } else {
+      alert('Geolocation is not supported by your browser.');
     }
   };
 
@@ -289,10 +300,10 @@ export default function App() {
       return;
     }
     window.speechSynthesis.cancel();
-    
+
     const cleanSpeech = text.replace(/[*#_`[\]()]/g, '');
     const utterance = new SpeechSynthesisUtterance(cleanSpeech);
-    
+
     if (selectedLanguage === 'hi') utterance.lang = 'hi-IN';
     else if (selectedLanguage === 'bn') utterance.lang = 'bn-IN';
     else if (selectedLanguage === 'ta') utterance.lang = 'ta-IN';
@@ -312,20 +323,27 @@ export default function App() {
     setIsSpeaking(false);
   };
 
+  const getNearbyMapsUrl = (query: string) => {
+    const encodedQuery = encodeURIComponent(query);
+    if (!gpsCoords) {
+      return `https://www.google.com/maps/search/${encodedQuery}+near+me`;
+    }
+    return `https://www.google.com/maps/search/${encodedQuery}/@${gpsCoords.lat},${gpsCoords.lng},15z`;
+  };
+
+  const getDirectionsUrl = (destination: string) => {
+    const encodedDestination = encodeURIComponent(destination);
+    if (!gpsCoords) {
+      return `https://www.google.com/maps/dir/?api=1&destination=${encodedDestination}`;
+    }
+    return `https://www.google.com/maps/dir/?api=1&origin=${gpsCoords.lat},${gpsCoords.lng}&destination=${encodedDestination}&travelmode=driving`;
+  };
+
   // Challan Calculation Client Call
   const handleCalculateChallan = async (e: React.FormEvent) => {
     e.preventDefault();
     setCalcLoading(true);
     setCalcResult(null);
-
-    const mappedViolations: Record<string, string> = {
-      'no_helmet': 'No Helmet',
-      'no_seatbelt': 'No Seatbelt',
-      'overspeeding': 'Overspeeding',
-      'drunk_driving': 'Drunk Driving',
-      'no_insurance': 'Driving Without Insurance',
-      'use_of_phone': 'Use of Mobile Phone'
-    };
 
     try {
       const res = await fetch('http://localhost:8000/chat/calculate-challan', {
@@ -356,6 +374,24 @@ export default function App() {
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files && e.target.files[0]) {
       const file = e.target.files[0];
+      const allowedTypes = ['image/png', 'image/jpeg', 'image/jpg'];
+
+      if (!allowedTypes.includes(file.type)) {
+        setOcrFile(null);
+        setOcrFilePreview(null);
+        setOcrResult('Unsupported file type. Please upload a PNG, JPG, or JPEG challan image.');
+        e.target.value = '';
+        return;
+      }
+
+      if (file.size > 5 * 1024 * 1024) {
+        setOcrFile(null);
+        setOcrFilePreview(null);
+        setOcrResult('File is too large. Please upload a challan image up to 5MB.');
+        e.target.value = '';
+        return;
+      }
+
       setOcrFile(file);
       setOcrFilePreview(URL.createObjectURL(file));
       setOcrResult('');
@@ -381,7 +417,8 @@ export default function App() {
         setOcrResult(data.content);
         fetchSessions();
       } else {
-        setOcrResult('Failed to parse the document. Verify file type and try again.');
+        const error = await res.json().catch(() => null);
+        setOcrResult(error?.detail || 'Failed to parse the document. Verify file type and try again.');
       }
     } catch (e) {
       console.error(e);
@@ -393,10 +430,10 @@ export default function App() {
 
   return (
     <div className="app-container">
-      
+
       {/* 1. SIDEBAR (VANILLA CSS METADATA) */}
       <aside className="sidebar">
-        
+
         <div className="sidebar-header">
           <div className="logo-container">
             <div className="logo-icon-wrapper">
@@ -424,7 +461,7 @@ export default function App() {
             <History style={{ width: '14px', height: '14px' }} />
             Recent Sessions
           </div>
-          
+
           {historyLoading ? (
             <div style={{ textAlign: 'center', padding: '16px', color: 'var(--text-muted)' }}>Loading...</div>
           ) : sessionsList.length === 0 ? (
@@ -454,13 +491,13 @@ export default function App() {
               {gpsLoading ? (
                 <p className="subtitle">Detecting GPS coords...</p>
               ) : gpsCoords ? (
-                <p className="subtitle" style={{ color: 'var(--color-success)' }}>GPS Enabled (Filtered to: {selectedState || 'Delhi'})</p>
+                <p className="subtitle" style={{ color: 'var(--color-success)' }}>GPS Enabled (Filtered to: {selectedState || 'National'})</p>
               ) : (
-                <p className="subtitle" style={{ color: 'var(--color-warning)' }}>Using Default (Filtered to: {selectedState || 'Delhi'})</p>
+                <p className="subtitle" style={{ color: 'var(--color-warning)' }}>Using Default (Filtered to: {selectedState || 'National'})</p>
               )}
             </div>
             <button onClick={detectLocation} className="gps-recal-btn" title="Recalibrate GPS">
-              <RefreshCw />
+              <RefreshCw className={gpsLoading ? 'animate-spin' : ''} />
             </button>
           </div>
         </div>
@@ -469,7 +506,7 @@ export default function App() {
 
       {/* 2. MAIN HUB PANEL */}
       <main className="main-panel">
-        
+
         <header className="header-bar">
           <nav className="nav-tabs">
             <button
@@ -534,11 +571,11 @@ export default function App() {
 
         {/* Tab Page Container */}
         <div className="tab-page-container">
-          
+
           {/* TAB 1: LEGAL CHATBOT */}
           {activeTab === 'chat' && (
             <div className="chat-tab-wrapper">
-              
+
               {/* Settings bar */}
               <div className="chat-settings-bar">
                 <div className="setting-group">
@@ -599,17 +636,17 @@ export default function App() {
               {/* Message List Panel */}
               <div className="messages-container scrollbar-thin">
                 {messages.map((m, idx) => (
-                  <div 
-                    key={idx} 
+                  <div
+                    key={idx}
                     className={`message-row ${m.role === 'user' ? 'user' : 'assistant'}`}
                   >
-                    
+
                     <div className="message-avatar">
                       {m.role === 'user' ? <User /> : <Cpu />}
                     </div>
 
                     <div className="message-body">
-                      
+
                       {m.role === 'assistant' && (
                         <div className="audio-controls">
                           <button
@@ -647,13 +684,13 @@ export default function App() {
                     </div>
                   </div>
                 )}
-                
+
                 <div ref={chatBottomRef} />
               </div>
 
               {/* Chat Input Bar */}
               <div className="chat-input-bar">
-                
+
                 <button
                   onClick={isRecording ? stopSpeechRecognition : startSpeechRecognition}
                   className={`voice-input-btn ${isRecording ? 'recording' : ''}`}
@@ -689,9 +726,9 @@ export default function App() {
           {/* TAB 2: CHALLAN CALCULATOR */}
           {activeTab === 'calculator' && (
             <div className="scroll-container scrollbar-thin">
-              
+
               <div className="calculator-card">
-                
+
                 <div className="card-header-icon">
                   <Calculator />
                   <div>
@@ -701,7 +738,7 @@ export default function App() {
                 </div>
 
                 <form onSubmit={handleCalculateChallan} className="calculator-form">
-                  
+
                   <div className="form-group">
                     <label className="form-label">Select Violation Category</label>
                     <select
@@ -798,9 +835,9 @@ export default function App() {
                 {calcResult && (
                   <div className="result-panel animate-fadeIn">
                     <h3 className="result-title">Calculation Results</h3>
-                    
+
                     <div className="grid-2-col">
-                      
+
                       <div className="result-card-pink">
                         <span className="result-meta">Estimated Fine Penalty</span>
                         <span className="result-value-big">₹{calcResult.fine_inr}</span>
@@ -829,9 +866,9 @@ export default function App() {
           {/* TAB 3: DOCUMENT UPLOAD OCR */}
           {activeTab === 'ocr' && (
             <div className="scroll-container scrollbar-thin">
-              
+
               <div style={{ maxWidth: '650px', width: '100%', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                
+
                 <div className="calculator-card">
                   <div className="card-header-icon">
                     <FileSearch />
@@ -879,7 +916,7 @@ export default function App() {
                 {ocrLoading && (
                   <div className="calculator-card ocr-thinking pulse-glow">
                     <Cpu />
-                    <p className="title">Extracting details using Gemini Vision OCR...</p>
+                    <p className="title">Extracting details using AI OCR...</p>
                     <p className="subtitle">Parsing violations, fine parameters and law citations.</p>
                   </div>
                 )}
@@ -901,9 +938,9 @@ export default function App() {
           {/* TAB 4: NEARBY HELP */}
           {activeTab === 'nearby' && (
             <div className="scroll-container scrollbar-thin">
-              
+
               <div style={{ maxWidth: '900px', width: '100%', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                
+
                 <div className="card-header-icon" style={{ marginBottom: '8px' }}>
                   <MapPin />
                   <div>
@@ -912,8 +949,39 @@ export default function App() {
                   </div>
                 </div>
 
+                <div className="nearby-location-bar">
+                  <div>
+                    <span className="nearby-location-label">Location</span>
+                    <p>
+                      {gpsLoading
+                        ? 'Detecting current position...'
+                        : gpsCoords
+                          ? `${gpsCoords.lat.toFixed(5)}, ${gpsCoords.lng.toFixed(5)}`
+                          : `Using browser Maps fallback${selectedState ? ` (${selectedState})` : ''}`}
+                    </p>
+                  </div>
+                  <button onClick={detectLocation} className="action-link-btn nearby-locate-btn" disabled={gpsLoading}>
+                    <RefreshCw style={{ width: '14px', height: '14px' }} className={gpsLoading ? 'animate-spin' : ''} />
+                    {gpsLoading ? 'Locating...' : 'Locate Me'}
+                  </button>
+                </div>
+
+                {gpsCoords && !gpsLoading && (
+                  <div className="map-embed-container animate-fadeIn">
+                    <iframe
+                      width="100%"
+                      height="100%"
+                      frameBorder={0}
+                      scrolling="no"
+                      marginHeight={0}
+                      marginWidth={0}
+                      src={`https://www.openstreetmap.org/export/embed.html?bbox=${gpsCoords.lng - 0.01},${gpsCoords.lat - 0.01},${gpsCoords.lng + 0.01},${gpsCoords.lat + 0.01}&layer=mapnik&marker=${gpsCoords.lat},${gpsCoords.lng}`}
+                    ></iframe>
+                  </div>
+                )}
+
                 <div className="grid-3-col">
-                  
+
                   {/* Police Station */}
                   <div className="help-card police">
                     <div>
@@ -928,8 +996,11 @@ export default function App() {
                         <Phone style={{ width: '14px', height: '14px', color: 'var(--color-success)' }} />
                         Dial Police (112)
                       </a>
-                      <a href="https://www.google.com/maps/search/police+station+near+me" target="_blank" rel="noreferrer" className="action-link-btn highlight">
-                        Open Maps Directions
+                      <a href={getNearbyMapsUrl('police station')} target="_blank" rel="noreferrer" className="action-link-btn highlight">
+                        Find Nearby
+                      </a>
+                      <a href={getDirectionsUrl('nearest police station')} target="_blank" rel="noreferrer" className="action-link-btn">
+                        Open Directions
                       </a>
                     </div>
                   </div>
@@ -948,8 +1019,11 @@ export default function App() {
                         <Phone style={{ width: '14px', height: '14px', color: 'var(--color-success)' }} />
                         Dial Ambulance (108)
                       </a>
-                      <a href="https://www.google.com/maps/search/emergency+hospital+near+me" target="_blank" rel="noreferrer" className="action-link-btn highlight-pink">
-                        Open Maps Directions
+                      <a href={getNearbyMapsUrl('emergency hospital trauma care')} target="_blank" rel="noreferrer" className="action-link-btn highlight-pink">
+                        Find Nearby
+                      </a>
+                      <a href={getDirectionsUrl('nearest emergency hospital')} target="_blank" rel="noreferrer" className="action-link-btn">
+                        Open Directions
                       </a>
                     </div>
                   </div>
@@ -967,8 +1041,11 @@ export default function App() {
                       <a href="https://parivahan.gov.in" target="_blank" rel="noreferrer" className="action-link-btn">
                         Visit Parivahan Portal
                       </a>
-                      <a href="https://www.google.com/maps/search/rto+office+near+me" target="_blank" rel="noreferrer" className="action-link-btn highlight-warning">
-                        Open Maps Directions
+                      <a href={getNearbyMapsUrl('rto office')} target="_blank" rel="noreferrer" className="action-link-btn highlight-warning">
+                        Find Nearby
+                      </a>
+                      <a href={getDirectionsUrl('nearest rto office')} target="_blank" rel="noreferrer" className="action-link-btn">
+                        Open Directions
                       </a>
                     </div>
                   </div>
@@ -983,9 +1060,9 @@ export default function App() {
           {/* TAB 5: SOS ROAD EMERGENCY GUIDE */}
           {activeTab === 'sos' && (
             <div className="scroll-container scrollbar-thin">
-              
+
               <div style={{ maxWidth: '700px', width: '100%', display: 'flex', flexDirection: 'column', gap: '24px' }}>
-                
+
                 <div className="card-header-icon" style={{ marginBottom: '8px' }}>
                   <AlertTriangle style={{ color: 'var(--color-accent)' }} />
                   <div>
@@ -995,45 +1072,37 @@ export default function App() {
                 </div>
 
                 <div className="sos-list-wrapper">
-                  
-                  {[
-                    {
-                      step: '01',
-                      title: 'Prioritize Safety & Physical Check',
-                      desc: 'Switch on hazard lights immediately. Check passengers and third-party occupants for injuries. If anyone is hurt, dial 108 for an ambulance and 112 for the police right away.'
-                    },
-                    {
-                      step: '02',
-                      title: 'Photograph Accident & Damage Scenes',
-                      desc: 'Before moving the vehicles (unless causing high safety blocks), take high-resolution photos of all vehicle damages, skid marks, license plates, and the overall road condition.'
-                    },
-                    {
-                      step: '03',
-                      title: 'Exchange Details & Note Witnesses',
-                      desc: 'Note the license plate, vehicle make/model, driver license number, and insurance details of the other driver. Identify nearby witnesses and get their contact numbers.'
-                    },
-                    {
-                      step: '04',
-                      title: 'Report Incident to Insurance within 24h',
-                      desc: 'Notify your vehicle insurance company immediately to log the case. Delayed reporting can lead to claims rejection or complex disputes.'
-                    },
-                    {
-                      step: '05',
-                      title: 'File an FIR (First Information Report)',
-                      desc: 'Report the accident at the local police station jurisdiction. An FIR is critical for insurance claims settlement, court defenses, and third-party liabilities.'
-                    }
-                  ].map((item) => (
-                    <div key={item.step} className="sos-step-row">
-                      <div className="sos-step-badge">
-                        {item.step}
-                      </div>
-                      <div className="sos-step-content">
-                        <h3>{item.title}</h3>
-                        <p>{item.desc}</p>
-                      </div>
+                  <div className="sos-step-row">
+                    <div className="sos-step-badge">1</div>
+                    <div className="sos-step-content">
+                      <h3>Ensure Safety & Health First</h3>
+                      <p>Check yourself and others for injuries. If anyone is hurt, immediately call 108 for an ambulance. Move to the side of the road if possible to avoid further collisions.</p>
                     </div>
-                  ))}
+                  </div>
 
+                  <div className="sos-step-row">
+                    <div className="sos-step-badge">2</div>
+                    <div className="sos-step-content">
+                      <h3>Do Not Flee (Section 134)</h3>
+                      <p>It is legally required to stay at the scene. Under Motor Vehicles Act Sec 134, failing to provide assistance or reporting the accident can result in hit-and-run charges.</p>
+                    </div>
+                  </div>
+
+                  <div className="sos-step-row">
+                    <div className="sos-step-badge">3</div>
+                    <div className="sos-step-content">
+                      <h3>Inform the Police (112)</h3>
+                      <p>Call the police immediately. Do not move the vehicles unless they are causing a massive hazard, and only after taking photos of the scene.</p>
+                    </div>
+                  </div>
+
+                  <div className="sos-step-row">
+                    <div className="sos-step-badge">4</div>
+                    <div className="sos-step-content">
+                      <h3>Document Everything</h3>
+                      <p>Take pictures of the vehicle damage, license plates, the other driver's DL and insurance, and the overall scene (skid marks, road conditions).</p>
+                    </div>
+                  </div>
                 </div>
 
               </div>
@@ -1042,9 +1111,7 @@ export default function App() {
           )}
 
         </div>
-
       </main>
-
     </div>
   );
 }

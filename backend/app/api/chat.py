@@ -15,6 +15,8 @@ from app.core.database import get_db
 from tools.challan_tool import calculate_challan  # type: ignore
 
 router = APIRouter()
+MAX_CHALLAN_IMAGE_SIZE = 5 * 1024 * 1024
+SUPPORTED_CHALLAN_IMAGE_TYPES = {"image/png", "image/jpeg", "image/jpg"}
 
 @router.post("/", response_model=ChatResponse)
 async def chat(request: ChatRequest, db: Session = Depends(get_db)):
@@ -230,7 +232,18 @@ async def upload_document(
 ):
     session_id = session_id or str(uuid.uuid4())
     try:
+        if file.content_type not in SUPPORTED_CHALLAN_IMAGE_TYPES:
+            raise HTTPException(
+                status_code=400,
+                detail="Unsupported file type. Upload a PNG, JPG, or JPEG challan image."
+            )
+
         contents = await file.read()
+        if len(contents) > MAX_CHALLAN_IMAGE_SIZE:
+            raise HTTPException(
+                status_code=400,
+                detail="File is too large. Upload a challan image up to 5MB."
+            )
         
         # Call Gemini client multimodal completed OCR
         service = ChatService(db)
@@ -241,6 +254,8 @@ async def upload_document(
             "session_id": session_id,
             "filename": file.filename
         }
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
