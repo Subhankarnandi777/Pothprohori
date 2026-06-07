@@ -1,67 +1,270 @@
-# DriveLegal AI — RAG Chatbot
+# 🚦 DriveLegal AI
 
-This project contains a RAG (Retrieval-Augmented Generation) chatbot for Indian traffic laws and violation fines, built with FastAPI for the backend API and ChromaDB + Gemini for the AI services.
+DriveLegal AI is an AI-powered traffic law assistant designed to help citizens understand traffic regulations, challan fines, legal provisions, and road safety requirements. The system provides accurate, source-backed answers using official traffic law documents, government notifications, and state-specific regulations.
 
-## Repository Layout
-- `backend/` - FastAPI web backend.
-- `ai-services/` - RAG pipeline, retriever, embedding models, and LLM wrappers.
-- `scripts/` - Ingestion and backend runner scripts.
+## 🎯 Problem Statement
+
+Traffic laws are often difficult to understand and vary across states. Citizens struggle to find accurate information regarding:
+
+- Traffic violations and penalties
+- State-specific challan amounts
+- Legal provisions and sections
+- Required driving documents
+- Road safety compliance
+- Traffic-related legal guidance
+
+DriveLegal AI solves this problem by providing instant, easy-to-understand, and source-backed answers through an intelligent conversational interface.
 
 ---
 
-## Quick Start (Windows PowerShell)
+## ✨ Features
 
-### 1. Set Up Python Virtual Environment
-We recommend using a virtual environment to manage dependencies locally.
-```powershell
+### 🤖 AI Traffic Law Assistant
+- Natural language question answering
+- Context-aware legal explanations
+- Simple and user-friendly responses
+
+### ⚖️ Traffic Law Information
+- Motor Vehicles Act, 1988
+- Motor Vehicles (Amendment) Act, 2019
+- State-specific traffic regulations
+- Government notifications and circulars
+
+### 💰 Challan & Fine Information
+- Violation-specific fines
+- State-wise penalty lookup
+- Challan calculation assistance
+- Repeat offense handling
+
+### 📍 Location-Aware Responses
+- State-specific traffic laws
+- Regional enforcement differences
+- Local traffic rule awareness
+
+### 🔎 Legal Document Retrieval (RAG)
+- Retrieval-Augmented Generation (RAG)
+- Source-backed answers
+- Original legal document references
+- Reduced hallucinations
+
+### 📚 Source Citation
+- Government sources
+- Official legal documents
+- Transport department notifications
+- Traffic police advisories
+
+---
+
+## 🏗️ System Architecture
+
+```text
+User Query
+     ↓
+Frontend (React)
+     ↓
+FastAPI Backend
+     ↓
+ChromaDB (Legal Knowledge Base)
+     ↓
+Gemini/OpenAI
+     ↓
+Response Generation
+```
+
+### Data Flow
+
+```text
+Official Government Sources
+        ↓
+PDF Collection
+        ↓
+Text Extraction
+        ↓
+Chunking
+        ↓
+ChromaDB
+        ↓
+AI Retrieval
+        ↓
+User Response
+```
+
+---
+
+## 🛠️ Tech Stack
+
+### Frontend
+- React.js
+- Tailwind CSS
+- Axios
+
+### Backend
+- FastAPI
+- Python
+
+### AI & RAG
+- Gemini API / OpenAI API
+- ChromaDB
+- Sentence Transformers
+
+### Database
+- PostgreSQL
+- ChromaDB
+
+### Data Processing
+- PyPDF
+- BeautifulSoup
+- Requests
+
+---
+
+## 📂 Project Structure
+
+```text
+DriveLegalAI/
+│
+├── frontend/
+│
+├── backend/
+│   ├── app.py
+│   ├── routes/
+│   ├── services/
+│   └── database/
+│
+├── data/
+│   ├── raw_documents/
+│   ├── processed/
+│   └── embeddings/
+│
+├── chroma_db/
+│
+├── scripts/
+│   ├── pdf_extractor.py
+│   ├── ingest_data.py
+│   └── update_data.py
+│
+└── README.md
+```
+
+---
+
+## 📄 Data Sources
+
+The system uses information from official sources including:
+
+- Ministry of Road Transport and Highways (MoRTH)
+- Parivahan Sewa
+- State Transport Departments
+- Traffic Police Departments
+- Government Gazette Notifications
+- Motor Vehicles Act, 1988
+- Motor Vehicles (Amendment) Act, 2019
+
+---
+
+## 🚀 Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/yourusername/drivelegal-ai.git
+
+cd drivelegal-ai
+```
+
+### Create Virtual Environment
+
+```bash
 python -m venv venv
-.\venv\Scripts\Activate
+
+source venv/bin/activate
 ```
 
-### 2. Install Backend & AI Services Dependencies
-```powershell
-pip install -r backend/requirements.txt
-pip install -r ai-services/requirements.txt
-```
+### Install Dependencies
 
-### 3. Set Your API Keys
-Edit `backend/.env` and replace `your_gemini_key_here` with your Google Gemini API Key.
-```env
-GEMINI_API_KEY=your_actual_api_key_here
-```
-
-### 4. Ingest Laws into ChromaDB
-```powershell
-python scripts/ingest_laws.py
-```
-> **Note:** Without a running ChromaDB Docker container, the indexer automatically falls back to an in-memory client database (data will reset when Python process exits).
-
-### 5. Start the FastAPI API Server
-You can start the backend using the provided runner script:
-```powershell
-.\scripts\run_backend.ps1
-```
-Or directly run:
-```powershell
-uvicorn backend.app.main:app --reload --host 0.0.0.0 --port 8000
-```
-
-### 6. Test the Chatbot Endpoint
-You can query the chatbot via a curl request:
 ```bash
-curl -X POST http://localhost:8000/chat/ `
-  -H "Content-Type: application/json" `
-  -d '{"message":"What is the helmet fine in West Bengal?","location":{"state":"West Bengal"}}'
+pip install -r requirements.txt
 ```
 
-### API Interactive Documentation
-Visit [http://localhost:8000/docs](http://localhost:8000/docs) once the server starts.
+### Start Backend
+
+```bash
+uvicorn app:app --reload
+```
+
+### Start Frontend
+
+```bash
+npm install
+
+npm run dev
+```
 
 ---
 
-## Optional: Run ChromaDB in Docker
-To keep your ChromaDB database persistent, run it in Docker:
-```bash
-docker run -d -p 8001:8000 chromadb/chroma
+## 🔑 Environment Variables
+
+Create a `.env` file:
+
+```env
+GEMINI_API_KEY=YOUR_API_KEY
+
+DATABASE_URL=postgresql://username:password@localhost:5432/drivelegal
+
+CHROMA_DB_PATH=./chroma_db
 ```
-And make sure `CHROMA_HOST=localhost` and `CHROMA_PORT=8001` are specified in `backend/.env`.
+
+---
+
+## 💬 Example Queries
+
+```text
+What is the fine for riding without a helmet?
+
+What documents should I carry while driving?
+
+Explain Section 194D.
+
+Calculate challan for no helmet and no driving licence.
+
+What is the penalty for drunk driving?
+
+Compare traffic fines in Delhi and West Bengal.
+```
+
+---
+
+## 🎯 Future Enhancements
+
+- Voice-based assistance
+- Multi-language support
+- Real-time traffic alerts
+- Mobile application
+- GPS-based traffic law lookup
+- Automated legal document updates
+- AI-powered challan calculator
+
+---
+
+## 📈 Benefits
+
+- Accurate and reliable legal information
+- Reduced misinformation
+- Improved road safety awareness
+- Easy access to traffic law guidance
+- Source-backed legal explanations
+
+---
+
+## 👨‍💻 Team
+
+Developed as part of an AI-powered Legal Traffic Assistant project to improve access to traffic law information and promote safer road usage.
+
+---
+
+## 📜 License
+
+This project is intended for educational and research purposes. Users should verify legal information with official government sources before making legal decisions.
+
+---
+⭐ If you found this project useful, consider giving it a star.
