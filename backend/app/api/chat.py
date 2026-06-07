@@ -85,6 +85,66 @@ async def calculate_challan_endpoint(request: ChallanRequest, db: Session = Depe
         if state_str.lower() in ["national", "central"]:
             state_str = ""
             
+        if state_str:
+            has_state_fine = db.query(FineByState).filter(
+                FineByState.violation_id == v_rec.id,
+                FineByState.state.ilike(state_str)
+            ).first()
+            
+            if not has_state_fine:
+                from tools.web_search import web_search
+                from llm.gemini_client import GeminiClient
+                import json
+                
+                search_query = f"fine amount for {v_rec.name} in {state_str} {request.vehicle_type or ''}"
+                print(f"[Calculator Fallback] Running live search for: '{search_query}'")
+                search_results = web_search(search_query)
+                
+                context_list = []
+                for res in search_results:
+                    context_list.append(f"Source: {res['title']} ({res['url']})\nSnippet: {res['snippet']}")
+                context_text = "\n\n".join(context_list)
+                
+                gemini = GeminiClient()
+                prompt = f"""You are a precise traffic law JSON extractor. Based on the following web search snippets, extract the traffic fine amount (in INR, integer only) and the law section code for the violation '{v_rec.name}' in {state_str} for a {request.vehicle_type} vehicle.
+                
+                Search Context:
+                {context_text}
+                
+                Rules:
+                1. Return ONLY a valid JSON object. Do not include any other text or markdown formatting (like ```json).
+                2. The JSON object must contain these exact keys:
+                   - "fine_inr": integer fine amount (e.g., 1000)
+                   - "section": string section code (e.g., "194D")
+                   - "explanation": string detailing the fine, state procedure, and source URL citation.
+                3. If no information is found in the search context, default to the central Motor Vehicles Act 2019 fine values.
+                """
+                
+                try:
+                    raw_response = await gemini.complete(
+                        system="You are a precise traffic law JSON extractor.",
+                        user=prompt
+                    )
+                    cleaned_resp = raw_response.strip()
+                    if cleaned_resp.startswith("```json"):
+                        cleaned_resp = cleaned_resp.replace("```json", "", 1)
+                    if cleaned_resp.endswith("```"):
+                        cleaned_resp = cleaned_resp[:-3].strip()
+                    cleaned_resp = cleaned_resp.strip()
+                    
+                    extracted_data = json.loads(cleaned_resp)
+                    
+                    return ChallanResponse(
+                        violation=v_rec.name,
+                        state=state_str,
+                        fine_inr=extracted_data.get("fine_inr", 0),
+                        repeat=request.repeat,
+                        section=extracted_data.get("section", "N/A"),
+                        explanation=extracted_data.get("explanation", "")
+                    )
+                except Exception as ex:
+                    print(f"[Calculator Fallback] Failed to extract from web search: {ex}")
+            
         # First, try matching the specific state and vehicle type
         fine_entry = db.query(FineByState).filter(
             FineByState.violation_id == v_rec.id,
