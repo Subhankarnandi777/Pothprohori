@@ -196,5 +196,159 @@
     "fine_max": 10000,
     "section": "Section 189, Motor Vehicles Act 2019",
     "penalty_details": "First Offense: Fine of ₹5,000 and/or up to 1 month imprisonment. Subsequent Offense: Fine of ₹10,000 and/or up to 1 month imprisonment."
+  },
+  {
+    "id": 19,
+    "violation": "Riding without Helmet",
+    "category": "no_helmet",
+    "vehicle_type": "2W",
+    "state": "Delhi",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194D, Delhi Motor Vehicle Rules",
+    "penalty_details": "Fine of ₹1,000 and license disqualification for 3 months (strictly monitored by Delhi Traffic Police)."
+  },
+  {
+    "id": 20,
+    "violation": "Riding without Helmet",
+    "category": "no_helmet",
+    "vehicle_type": "2W",
+    "state": "Maharashtra",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194D, Maharashtra Motor Vehicle Rules",
+    "penalty_details": "Fine of ₹1,000 and license suspension for 3 months (as per Maharashtra State Transport Department)."
+  },
+  {
+    "id": 21,
+    "violation": "Driving without Seatbelt",
+    "category": "no_seatbelt",
+    "vehicle_type": "4W",
+    "state": "West Bengal",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194B(1), WB Motor Vehicles Rules",
+    "penalty_details": "Fine of ₹1,000 for driver or passengers not wearing seatbelts in West Bengal."
+  },
+  {
+    "id": 22,
+    "violation": "Driving without Seatbelt",
+    "category": "no_seatbelt",
+    "vehicle_type": "4W",
+    "state": "Delhi",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194B(1), Delhi Motor Vehicle Rules",
+    "penalty_details": "Fine of ₹1,000 for failing to wear seatbelts in the National Capital Territory of Delhi."
+  },
+  {
+    "id": 23,
+    "violation": "Driving without Seatbelt",
+    "category": "no_seatbelt",
+    "vehicle_type": "4W",
+    "state": "Maharashtra",
+    "fine_min": 1000,
+    "fine_max": 1000,
+    "section": "Section 194B(1), Maharashtra Motor Vehicle Rules",
+    "penalty_details": "Fine of ₹1,000. Rear seatbelts are also strictly enforced in Mumbai and other urban areas in Maharashtra."
+  },
+  {
+    "id": 24,
+    "violation": "Overspeeding (Light Motor Vehicle / Car)",
+    "category": "overspeeding",
+    "vehicle_type": "4W",
+    "state": "West Bengal",
+    "fine_min": 1000,
+    "fine_max": 2000,
+    "section": "Section 183(1)(i), WB Traffic Rules",
+    "penalty_details": "Fine of ₹1,000 to ₹2,000 for speeding LMVs on West Bengal state highways and city roads."
+  },
+  {
+    "id": 25,
+    "violation": "Overspeeding (Light Motor Vehicle / Car)",
+    "category": "overspeeding",
+    "vehicle_type": "4W",
+    "state": "Delhi",
+    "fine_min": 1000,
+    "fine_max": 2000,
+    "section": "Section 183(1)(i), Delhi Traffic Rules",
+    "penalty_details": "Fine of ₹1,000 to ₹2,000. Speed limits are strictly monitored by speed cameras on Delhi roads."
+  },
+  {
+    "id": 26,
+    "violation": "Overspeeding (Light Motor Vehicle / Car)",
+    "category": "overspeeding",
+    "vehicle_type": "4W",
+    "state": "Maharashtra",
+    "fine_min": 1000,
+    "fine_max": 2000,
+    "section": "Section 183(1)(i), Maharashtra State Rules",
+    "penalty_details": "Fine of ₹1,000 to ₹2,000 for speeding LMVs on highways like Mumbai-Pune Expressway."
+  },
+  {
+    "id": 27,
+    "violation": "Drunk Driving / Driving under Influence",
+    "category": "drunk_driving",
+    "vehicle_type": "all",
+    "state": "West Bengal",
+    "fine_min": 10000,
+    "fine_max": 15000,
+    "section": "Section 185, WB Traffic Police Guidelines",
+    "penalty_details": "First Offense: ₹10,000 fine and up to 6 months jail. Subsequent Offense: ₹15,000 fine."
+  },
+  {
+    "id": 28,
+    "violation": "Drunk Driving / Driving under Influence",
+    "category": "drunk_driving",
+    "vehicle_type": "all",
+    "state": "Delhi",
+    "fine_min": 10000,
+    "fine_max": 15000,
+    "section": "Section 185, Delhi Police Act & MV rules",
+    "penalty_details": "First Offense: ₹10,000 fine and immediate suspension of Driving License. Subsequent Offense: ₹15,000 fine."
+  },
+  {
+    "id": 29,
+    "violation": "Drunk Driving / Driving under Influence",
+    "category": "drunk_driving",
+    "vehicle_type": "all",
+    "state": "Maharashtra",
+    "fine_min": 10000,
+    "fine_max": 15000,
+    "section": "Section 185, Maharashtra Motor Vehicle Rules",
+    "penalty_details": "First Offense: ₹10,000 fine and/or 6 months imprisonment. Vehicle impoundment is common."
+  },
+  {
+    "id": 30,
+    "violation": "Driving without valid Pollution Under Control (PUC) Certificate",
+    "category": "no_puc",
+    "vehicle_type": "all",
+    "state": "West Bengal",
+    "fine_min": 10000,
+    "fine_max": 10000,
+    "section": "Section 190(2), WB Pollution Rules",
+    "penalty_details": "Fine of ₹10,000 for failing to produce a valid PUC certificate in West Bengal."
+  },
+  {
+    "id": 31,
+    "violation": "Driving without valid Pollution Under Control (PUC) Certificate",
+    "category": "no_puc",
+    "vehicle_type": "all",
+    "state": "Delhi",
+    "fine_min": 10000,
+    "fine_max": 10000,
+    "section": "Section 190(2), Delhi Air Pollution control act",
+    "penalty_details": "Fine of ₹10,000. In Delhi, this is strictly enforced by transport authorities to curb air pollution."
+  },
+  {
+    "id": 32,
+    "violation": "Driving without valid Pollution Under Control (PUC) Certificate",
+    "category": "no_puc",
+    "vehicle_type": "all",
+    "state": "Maharashtra",
+    "fine_min": 10000,
+    "fine_max": 10000,
+    "section": "Section 190(2), Maharashtra Pollution Rules",
+    "penalty_details": "Fine of ₹10,000 for operating a polluting vehicle without a valid PUC certificate in Maharashtra."
   }
 ]

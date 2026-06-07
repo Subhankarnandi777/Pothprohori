@@ -332,7 +332,7 @@ export default function App() {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          violation: mappedViolations[calcViolation] || calcViolation,
+          violation: calcViolation,
           state: calcState,
           vehicle_type: calcVehicle,
           repeat: calcRepeat

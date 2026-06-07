@@ -27,7 +27,8 @@ def ingest():
         client = chromadb.HttpClient(host=CHROMA_HOST, port=CHROMA_PORT)
     except Exception:
         try:
-            client = chromadb.Client()
+            db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../chroma_db"))
+            client = chromadb.PersistentClient(path=db_path)
         except Exception as e:
             print(f"[Indexer Fallback] Failed to initialize ChromaDB: {e}. Skipping ingestion.")
             return

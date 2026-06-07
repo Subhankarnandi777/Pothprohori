@@ -43,30 +43,67 @@ async def calculate_challan_endpoint(request: ChallanRequest, db: Session = Depe
         from app.models.traffic import Violation, FineByState, LawSection
         
         # 1. Match violation
+        v_cat = request.violation.lower().replace(" ", "_")
         v_rec = db.query(Violation).filter(
             (Violation.category == request.violation.lower()) | 
-            (Violation.name.ilike(request.violation))
+            (Violation.category == v_cat) |
+            (Violation.name.ilike(request.violation)) |
+            (Violation.name.ilike(f"%{request.violation}%"))
         ).first()
         
         if not v_rec:
             raise HTTPException(status_code=404, detail=f"Violation '{request.violation}' not found in database.")
             
-        # 2. Get fine for state (or fallback to empty string representing National/Central)
+        # 2. Get fine for state and vehicle type (or fallback)
         state_str = request.state or ""
         if state_str.lower() in ["national", "central"]:
             state_str = ""
             
+        # First, try matching the specific state and vehicle type
         fine_entry = db.query(FineByState).filter(
             FineByState.violation_id == v_rec.id,
-            FineByState.state.ilike(state_str)
+            FineByState.state.ilike(state_str),
+            FineByState.vehicle_type == request.vehicle_type
         ).first()
         
-        # If state-specific fine not found, fallback to national/central
-        if not fine_entry and state_str != "":
+        # If not found, try matching the specific state with "all" vehicles
+        if not fine_entry:
             fine_entry = db.query(FineByState).filter(
                 FineByState.violation_id == v_rec.id,
-                FineByState.state == ""
+                FineByState.state.ilike(state_str),
+                FineByState.vehicle_type == "all"
             ).first()
+            
+        # If not found, fall back to any vehicle type for this state
+        if not fine_entry:
+            fine_entry = db.query(FineByState).filter(
+                FineByState.violation_id == v_rec.id,
+                FineByState.state.ilike(state_str)
+            ).first()
+            
+        # If not found and a specific state was requested, fall back to national/central rules
+        if not fine_entry and state_str != "":
+            # Try national/central and specific vehicle type
+            fine_entry = db.query(FineByState).filter(
+                FineByState.violation_id == v_rec.id,
+                FineByState.state == "",
+                FineByState.vehicle_type == request.vehicle_type
+            ).first()
+            
+            # Try national/central and "all" vehicles
+            if not fine_entry:
+                fine_entry = db.query(FineByState).filter(
+                    FineByState.violation_id == v_rec.id,
+                    FineByState.state == "",
+                    FineByState.vehicle_type == "all"
+                ).first()
+                
+            # Try national/central and any vehicle type
+            if not fine_entry:
+                fine_entry = db.query(FineByState).filter(
+                    FineByState.violation_id == v_rec.id,
+                    FineByState.state == ""
+                ).first()
             
         if not fine_entry:
             raise HTTPException(status_code=404, detail="Fine details not found in database.")

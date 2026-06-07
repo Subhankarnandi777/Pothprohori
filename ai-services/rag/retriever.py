@@ -28,7 +28,8 @@ class Retriever:
                 self.collection = self.client.get_or_create_collection(COLLECTION_NAME)
             except Exception:
                 try:
-                    self.client = chromadb.Client()
+                    db_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../chroma_db"))
+                    self.client = chromadb.PersistentClient(path=db_path)
                     self.collection = self.client.get_or_create_collection(COLLECTION_NAME)
                 except Exception:
                     self.chroma_available = False
@@ -78,7 +79,10 @@ class Retriever:
     def search(self, query_vector: list[float], state: str = "", k: int = 5) -> list[dict]:
         if self.chroma_available and self.collection:
             try:
-                where = {"state": state} if state else None
+                if state:
+                    where = {"$or": [{"state": state.title()}, {"state": "National"}]}
+                else:
+                    where = {"state": "National"}
                 results = self.collection.query(
                     query_embeddings=[query_vector],
                     n_results=k,
