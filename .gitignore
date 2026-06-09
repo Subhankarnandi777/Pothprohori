@@ -8,3 +8,7 @@ __pycache__/
 node_modules/
 .next/
 chroma_data/
+chroma_db/
+embeddings/
+venv/
+data/eval/report.json
