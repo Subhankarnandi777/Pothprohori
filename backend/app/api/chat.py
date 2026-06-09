@@ -2,9 +2,6 @@ import uuid
 import sys
 import os
 
-# Add ai-services to python path to resolve tool imports
-sys.path.insert(0, os.path.join(os.path.dirname(__file__), "../../../ai-services"))
-
 from fastapi import APIRouter, Depends, HTTPException, UploadFile, File, Form
 from fastapi.responses import StreamingResponse
 from sqlalchemy.orm import Session

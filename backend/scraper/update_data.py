@@ -19,12 +19,11 @@ for pkg, imp_name in required_packages:
         print(f"[ETL] Installing missing package: {pkg}...")
         subprocess.check_call([sys.executable, "-m", "pip", "install", pkg])
 
-# 2. Add ai-services and backend paths
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
-sys.path.insert(0, os.path.join(BASE_DIR, "ai-services"))
+# 2. Add backend path
+BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../.."))
 sys.path.insert(0, os.path.join(BASE_DIR, "backend"))
 
-from rag.embeddings import EmbeddingModel
+from rag.embed import EmbeddingModel
 from dotenv import load_dotenv
 
 # 3. Load Environment Variables from backend/.env
@@ -347,6 +346,13 @@ def seed_postgres():
 if __name__ == "__main__":
     start_time = time.time()
     download_pdfs()
+    
+    try:
+        import backend.scraper.wb_scraper as wb_scraper
+        wb_scraper.scrape_wbtraffic()
+    except Exception as e:
+        print(f"[Pipeline] Skipping WB scraper: {e}")
+        
     extract_text()
     ingest_to_chroma()
     seed_postgres()

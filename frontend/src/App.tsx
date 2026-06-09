@@ -218,18 +218,25 @@ export default function App() {
           const lines = chunk.split('\n');
           for (const line of lines) {
             if (line.startsWith('data: ')) {
-              const dataVal = line.slice(6).trim();
-              if (dataVal === '[DONE]') {
+              const dataVal = line.slice(6);
+              if (dataVal.trim() === '[DONE]') {
                 break;
               }
               if (dataVal) {
-                assistantReply += dataVal;
-                setMessages(prev => {
-                  const lastIdx = prev.length - 1;
-                  const newArr = [...prev];
-                  newArr[lastIdx] = { ...newArr[lastIdx], content: assistantReply };
-                  return newArr;
-                });
+                try {
+                  const parsed = JSON.parse(dataVal);
+                  if (parsed.chunk) {
+                    assistantReply += parsed.chunk;
+                    setMessages(prev => {
+                      const lastIdx = prev.length - 1;
+                      const newArr = [...prev];
+                      newArr[lastIdx] = { ...newArr[lastIdx], content: assistantReply };
+                      return newArr;
+                    });
+                  }
+                } catch (err) {
+                  // Ignore parse errors from partial chunks if any
+                }
               }
             }
           }

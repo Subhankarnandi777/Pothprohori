@@ -1,0 +1,72 @@
+[
+    {
+        "query": "I got caught driving without a helmet in Delhi. How much is the fine?",
+        "state": "Delhi",
+        "expected_section": "194D",
+        "expected_amount": 1000,
+        "category": "Basic Fine"
+    },
+    {
+        "query": "What is the penalty for driving under the influence of alcohol for the first time in Maharashtra?",
+        "state": "Maharashtra",
+        "expected_section": "185",
+        "expected_amount": 10000,
+        "category": "DUI First Offense"
+    },
+    {
+        "query": "My friend was caught drunk driving again. He had a previous DUI. What is the fine?",
+        "state": "",
+        "expected_section": "185",
+        "expected_amount": 15000,
+        "category": "DUI Repeat Offense"
+    },
+    {
+        "query": "How much is the challan for jumping a red light in West Bengal?",
+        "state": "West Bengal",
+        "expected_section": "184",
+        "expected_amount": 500,
+        "category": "Traffic Signal"
+    },
+    {
+        "query": "I am 16 years old and I was caught driving a car. What is the penalty?",
+        "state": "",
+        "expected_section": "199A",
+        "expected_amount": 25000,
+        "category": "Juvenile Offense"
+    },
+    {
+        "query": "What happens if I use my mobile phone while driving?",
+        "state": "",
+        "expected_section": "184",
+        "expected_amount": 1000,
+        "category": "Distracted Driving"
+    },
+    {
+        "query": "Is there a fine for not wearing a seatbelt?",
+        "state": "",
+        "expected_section": "194B",
+        "expected_amount": 1000,
+        "category": "Seatbelt"
+    },
+    {
+        "query": "I was racing on a public road in Delhi. How much fine will I pay?",
+        "state": "Delhi",
+        "expected_section": "189",
+        "expected_amount": 5000,
+        "category": "Racing"
+    },
+    {
+        "query": "What is the fine for an ambulance being blocked?",
+        "state": "",
+        "expected_section": "194E",
+        "expected_amount": 10000,
+        "category": "Emergency Vehicles"
+    },
+    {
+        "query": "Driving without a valid insurance. Penalty in Maharashtra?",
+        "state": "Maharashtra",
+        "expected_section": "196",
+        "expected_amount": 2000,
+        "category": "Insurance"
+    }
+]

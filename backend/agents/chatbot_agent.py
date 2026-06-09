@@ -3,7 +3,7 @@ Chatbot agent with tool-use loop.
 Currently wraps RAGPipeline directly.
 Extend here to add multi-step reasoning or LangChain agent.
 """
-from rag.pipeline import RAGPipeline
+from ingestion.pipeline import RAGPipeline
 
 class ChatbotAgent:
     def __init__(self):

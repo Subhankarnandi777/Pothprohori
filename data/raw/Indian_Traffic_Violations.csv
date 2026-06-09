@@ -1,0 +1,501 @@
+Date,Time,Violation_ID,Violation_Category,Fine_Amount,Helmet_Worn,Seatbelt_Worn,Registration_State,Vehicle_Age,Comments
+2025-11-24,03:01,5506,Speeding,971,Yes,Yes,TN,2,No Comment
+2025-10-07,02:37,7912,Speeding,947,Yes,Yes,WB,4,No Comment
+2025-01-14,17:12,9928,No Helmet,1129,No,Yes,UP,5,Refused to pay
+2025-01-04,05:44,7924,Speeding,979,Yes,Yes,WB,13,No Comment
+2025-02-17,12:06,6881,Drunk Driving,10035,Yes,Yes,DL,12,No Comment
+2025-03-05,12:05,5803,Drunk Driving,10085,Yes,Yes,UP,4,Caught on camera
+2025-01-24,21:14,5741,Red Light Jump,5019,Yes,Yes,DL,7,No Comment
+2025-11-22,11:10,7065,Speeding,1036,Yes,Yes,TN,15,No Comment
+2025-02-06,19:40,3803,No Helmet,1025,No,Yes,WB,8,No Comment
+2025-11-24,22:35,4598,No Seatbelt,928,Yes,No,WB,14,No Comment
+2025-06-11,12:17,2084,Speeding,1190,Yes,Yes,TN,6,No Comment
+2025-09-13,12:56,8517,Speeding,971,Yes,Yes,WB,12,No Comment
+2025-05-15,23:37,8019,Red Light Jump,5104,Yes,Yes,MH,4,First time offender
+2025-03-12,16:31,2489,No Seatbelt,956,Yes,No,WB,11,No Comment
+2025-12-15,13:38,2040,Speeding,1139,Yes,Yes,UP,5,First time offender
+2025-01-06,21:46,2876,No Seatbelt,1174,Yes,No,MH,13,No Comment
+2025-02-27,09:27,3591,No Helmet,1034,No,Yes,UP,13,No Comment
+2025-02-24,20:19,9317,No Helmet,978,No,Yes,MH,13,No Comment
+2025-09-29,00:38,6310,No Helmet,957,No,Yes,MH,15,First time offender
+2025-06-07,07:03,4946,Red Light Jump,4940,Yes,Yes,DL,12,No Comment
+2025-02-05,17:49,3060,Speeding,1143,Yes,Yes,UP,3,No Comment
+2025-11-07,13:13,9835,No Seatbelt,1002,Yes,No,TN,5,No Comment
+2025-12-10,20:23,8177,Red Light Jump,5131,Yes,Yes,DL,4,No Comment
+2025-06-23,00:37,4770,No Helmet,903,No,Yes,DL,12,No Comment
+2025-04-28,02:57,1514,Red Light Jump,4936,Yes,Yes,UP,4,No Comment
+2025-09-06,06:34,3167,No Seatbelt,1192,Yes,No,UP,8,No Comment
+2025-08-31,13:12,2545,Speeding,1120,Yes,Yes,MH,7,No Comment
+2025-01-28,21:41,2612,Speeding,1073,Yes,Yes,DL,4,No Comment
+2025-10-02,14:08,7912,Speeding,1136,Yes,Yes,WB,14,First time offender
+2025-08-15,17:06,1828,No Seatbelt,1176,Yes,No,DL,2,First time offender
+2025-05-02,05:26,8956,No Helmet,1105,No,Yes,DL,3,No Comment
+2025-07-19,08:59,8454,Speeding,1184,Yes,Yes,TN,12,No Comment
+2025-04-08,09:13,1958,No Helmet,1177,No,Yes,DL,12,No Comment
+2025-01-26,18:30,9238,Red Light Jump,5171,Yes,Yes,WB,1,First time offender
+2025-02-11,05:04,2113,No Seatbelt,1020,Yes,No,KA,2,First time offender
+2025-10-19,07:37,1651,No Helmet,1114,No,Yes,TN,10,No Comment
+2025-06-11,08:13,6147,Speeding,1102,Yes,Yes,WB,11,No Comment
+2025-08-23,10:59,2188,Speeding,1188,Yes,Yes,DL,2,No Comment
+2025-09-17,08:08,6718,Red Light Jump,5025,Yes,Yes,MH,5,No Comment
+2025-10-06,22:19,9666,Speeding,1183,Yes,Yes,MH,15,No Comment
+2025-03-10,08:07,2753,No Seatbelt,979,Yes,No,MH,5,No Comment
+2025-06-25,06:43,5325,No Helmet,1028,No,Yes,DL,2,No Comment
+2025-05-22,01:00,6464,No Seatbelt,1034,Yes,No,WB,12,No Comment
+2025-12-28,13:35,1158,Speeding,976,Yes,Yes,UP,1,Refused to pay
+2025-10-26,17:09,8041,Speeding,1057,Yes,Yes,MH,15,First time offender
+2025-01-21,11:13,5088,No Seatbelt,1081,Yes,No,UP,15,Refused to pay
+2025-11-14,23:09,4878,Red Light Jump,4990,Yes,Yes,KA,1,No Comment
+2025-06-20,13:51,5065,Speeding,955,Yes,Yes,KA,14,No Comment
+2025-08-29,07:12,8541,Speeding,1016,Yes,Yes,WB,1,No Comment
+2025-07-24,10:17,2137,Red Light Jump,5042,Yes,Yes,MH,11,No Comment
+2025-12-14,17:21,1452,Speeding,1033,Yes,Yes,WB,10,First time offender
+2025-05-16,01:06,8119,Speeding,1060,Yes,Yes,KA,10,First time offender
+2025-03-01,12:57,4114,Speeding,1123,Yes,Yes,DL,9,First time offender
+2025-10-03,21:46,4228,Speeding,935,Yes,Yes,TN,15,No Comment
+2025-06-10,21:54,3041,No Seatbelt,1053,Yes,No,UP,5,No Comment
+2025-06-17,12:44,5844,No Helmet,998,No,Yes,KA,11,First time offender
+2025-12-13,23:57,3851,No Helmet,1054,No,Yes,KA,9,Refused to pay
+2025-06-05,09:13,8043,No Seatbelt,1064,Yes,No,KA,8,No Comment
+2025-04-20,16:30,3780,No Seatbelt,1045,Yes,No,UP,11,No Comment
+2025-06-21,02:52,4848,No Seatbelt,1015,Yes,No,WB,3,No Comment
+2025-05-06,15:39,2193,No Helmet,1194,No,Yes,WB,12,No Comment
+2025-09-11,12:15,3417,No Seatbelt,902,Yes,No,DL,13,No Comment
+2025-04-01,22:33,8611,Speeding,1027,Yes,Yes,DL,8,No Comment
+2025-08-26,21:33,6198,Red Light Jump,5126,Yes,Yes,UP,14,Caught on camera
+2025-09-16,13:53,9976,No Helmet,981,No,Yes,TN,14,No Comment
+2025-05-13,07:53,5543,No Seatbelt,1166,Yes,No,KA,11,No Comment
+2025-08-14,02:45,5681,Speeding,1071,Yes,Yes,MH,15,No Comment
+2025-03-12,04:14,7275,No Seatbelt,1009,Yes,No,DL,7,No Comment
+2025-10-05,14:26,2020,Speeding,1115,Yes,Yes,KA,15,Caught on camera
+2025-12-23,00:54,7232,No Helmet,1080,No,Yes,MH,13,No Comment
+2025-08-03,17:47,9947,No Seatbelt,1012,Yes,No,KA,4,No Comment
+2025-09-06,00:24,6507,No Seatbelt,1107,Yes,No,TN,3,Refused to pay
+2025-03-07,19:34,1441,Red Light Jump,5188,Yes,Yes,TN,1,No Comment
+2025-08-08,04:55,8564,Speeding,1033,Yes,Yes,KA,6,No Comment
+2025-06-17,10:48,7211,Speeding,1115,Yes,Yes,MH,14,No Comment
+2025-01-10,23:34,1853,Red Light Jump,5079,Yes,Yes,WB,11,No Comment
+2025-11-30,01:48,1508,Red Light Jump,5002,Yes,Yes,DL,10,No Comment
+2025-03-06,15:42,2874,No Helmet,1011,No,Yes,KA,12,No Comment
+2025-07-08,05:38,2876,No Seatbelt,983,Yes,No,MH,2,No Comment
+2025-06-09,18:43,7149,Speeding,1001,Yes,Yes,DL,10,No Comment
+2025-11-18,07:06,5941,Red Light Jump,4961,Yes,Yes,UP,13,No Comment
+2025-09-30,13:42,7071,Speeding,1074,Yes,Yes,DL,14,No Comment
+2025-09-08,03:27,6934,No Helmet,1135,No,Yes,TN,3,No Comment
+2025-09-25,20:17,9817,No Seatbelt,1138,Yes,No,KA,14,Caught on camera
+2025-05-18,10:54,5022,Drunk Driving,9944,Yes,Yes,MH,15,No Comment
+2025-08-26,18:39,7209,Speeding,1153,Yes,Yes,MH,3,No Comment
+2025-07-01,08:21,5581,Red Light Jump,5041,Yes,Yes,UP,1,No Comment
+2025-04-08,02:15,7658,No Helmet,1023,No,Yes,TN,8,No Comment
+2025-09-09,14:50,1282,Speeding,1013,Yes,Yes,KA,12,No Comment
+2025-12-06,18:23,8753,No Helmet,1076,No,Yes,KA,12,No Comment
+2025-06-30,22:29,5438,Speeding,1018,Yes,Yes,DL,12,No Comment
+2025-03-03,23:34,4033,Speeding,1147,Yes,Yes,MH,12,No Comment
+2025-09-26,19:18,2647,Drunk Driving,10051,Yes,Yes,WB,6,No Comment
+2025-01-08,22:34,3073,Speeding,927,Yes,Yes,UP,5,No Comment
+2025-03-06,20:55,9042,Speeding,906,Yes,Yes,UP,5,No Comment
+2025-08-14,10:11,1841,Speeding,1144,Yes,Yes,DL,14,No Comment
+2025-09-09,02:36,1878,Speeding,1188,Yes,Yes,MH,2,First time offender
+2025-03-02,17:48,7818,No Helmet,1015,No,Yes,UP,7,No Comment
+2025-08-15,09:55,8025,Speeding,930,Yes,Yes,UP,12,No Comment
+2025-04-17,20:13,5335,No Seatbelt,980,Yes,No,WB,3,No Comment
+2025-03-22,00:26,8381,No Seatbelt,1140,Yes,No,MH,1,No Comment
+2025-12-28,09:44,8438,Speeding,1019,Yes,Yes,MH,13,Caught on camera
+2025-10-29,21:51,4241,No Helmet,1178,No,Yes,WB,11,No Comment
+2025-05-17,04:04,1977,Speeding,1057,Yes,Yes,UP,12,Refused to pay
+2025-05-28,14:07,8679,No Seatbelt,1106,Yes,No,MH,9,No Comment
+2025-08-13,02:38,1653,Red Light Jump,5065,Yes,Yes,UP,5,No Comment
+2025-04-28,21:53,1339,Red Light Jump,5037,Yes,Yes,UP,1,Caught on camera
+2025-03-31,15:33,8245,Red Light Jump,4992,Yes,Yes,UP,7,No Comment
+2025-09-09,02:30,6700,No Helmet,1064,No,Yes,TN,2,Refused to pay
+2025-06-18,13:44,9117,Speeding,1105,Yes,Yes,UP,1,No Comment
+2025-06-11,08:20,2899,Red Light Jump,5106,Yes,Yes,UP,14,First time offender
+2025-12-03,17:29,7770,Speeding,1165,Yes,Yes,MH,10,Caught on camera
+2025-11-17,14:48,1845,Speeding,1181,Yes,Yes,WB,15,No Comment
+2025-12-24,15:07,1472,Red Light Jump,5022,Yes,Yes,TN,3,No Comment
+2025-01-08,17:26,2527,Speeding,958,Yes,Yes,KA,2,No Comment
+2025-03-20,15:59,5781,No Helmet,1039,No,Yes,KA,14,No Comment
+2025-08-30,07:29,3369,Speeding,1160,Yes,Yes,TN,15,No Comment
+2025-02-05,08:49,7798,Speeding,1159,Yes,Yes,MH,14,No Comment
+2025-06-02,18:37,9022,Red Light Jump,5128,Yes,Yes,UP,8,No Comment
+2025-10-10,17:24,8460,Red Light Jump,4996,Yes,Yes,TN,4,No Comment
+2025-04-30,13:02,6213,No Seatbelt,1095,Yes,No,KA,11,Caught on camera
+2025-11-30,04:31,1606,Speeding,1069,Yes,Yes,DL,14,Refused to pay
+2025-02-21,16:58,8486,Speeding,973,Yes,Yes,KA,14,No Comment
+2025-03-21,02:30,5342,Speeding,1103,Yes,Yes,TN,2,Refused to pay
+2025-12-12,17:24,6188,No Helmet,1149,No,Yes,UP,1,No Comment
+2025-05-01,20:43,5708,Red Light Jump,4946,Yes,Yes,KA,2,Caught on camera
+2025-12-27,03:28,3725,No Seatbelt,914,Yes,No,DL,6,Caught on camera
+2025-05-31,11:23,8056,Speeding,1171,Yes,Yes,KA,10,No Comment
+2025-04-03,05:11,2293,No Helmet,1095,No,Yes,UP,11,No Comment
+2025-10-26,04:14,8555,No Helmet,1135,No,Yes,MH,11,No Comment
+2025-08-27,09:43,9955,Speeding,1126,Yes,Yes,MH,10,No Comment
+2025-08-06,22:16,8484,Drunk Driving,10001,Yes,Yes,KA,14,No Comment
+2025-05-02,12:36,6881,No Helmet,1051,No,Yes,DL,14,No Comment
+2025-05-21,00:36,1803,Red Light Jump,5154,Yes,Yes,MH,13,Caught on camera
+2025-11-07,11:14,4115,No Helmet,970,No,Yes,TN,2,First time offender
+2025-11-27,01:19,8222,Speeding,1086,Yes,Yes,TN,3,No Comment
+2025-06-01,10:47,7807,Speeding,967,Yes,Yes,UP,15,First time offender
+2025-09-29,16:58,5465,Drunk Driving,10031,Yes,Yes,KA,13,No Comment
+2025-06-23,03:29,2233,Speeding,1015,Yes,Yes,TN,12,No Comment
+2025-07-23,17:23,2479,No Seatbelt,907,Yes,No,MH,9,No Comment
+2025-07-08,21:47,5295,No Helmet,1090,No,Yes,DL,11,No Comment
+2025-01-13,19:56,6374,Red Light Jump,5013,Yes,Yes,TN,2,No Comment
+2025-08-26,22:19,7689,Speeding,923,Yes,Yes,DL,5,First time offender
+2025-03-01,03:15,9807,Speeding,1132,Yes,Yes,MH,11,First time offender
+2025-12-23,17:26,3531,Red Light Jump,4950,Yes,Yes,KA,10,No Comment
+2025-05-24,01:44,7070,Speeding,1127,Yes,Yes,WB,14,No Comment
+2025-12-18,11:34,6876,Speeding,1041,Yes,Yes,WB,2,First time offender
+2025-08-21,02:42,4475,No Helmet,910,No,Yes,DL,13,No Comment
+2025-03-06,18:13,2124,Drunk Driving,10183,Yes,Yes,WB,10,No Comment
+2025-04-30,10:49,3417,No Seatbelt,901,Yes,No,MH,14,First time offender
+2025-03-08,17:16,3858,Speeding,913,Yes,Yes,WB,1,No Comment
+2025-05-02,18:20,1258,Speeding,926,Yes,Yes,WB,12,No Comment
+2025-02-28,23:04,8802,No Helmet,1085,No,Yes,UP,10,No Comment
+2025-09-15,07:39,1710,No Seatbelt,1166,Yes,No,MH,8,No Comment
+2025-01-16,01:30,7580,No Helmet,955,No,Yes,KA,12,First time offender
+2025-02-07,02:20,3430,Speeding,1040,Yes,Yes,UP,11,No Comment
+2025-12-31,10:24,9692,Speeding,1158,Yes,Yes,UP,7,No Comment
+2025-12-26,03:54,4522,No Helmet,1016,No,Yes,KA,6,Refused to pay
+2025-07-24,13:46,2557,Speeding,1060,Yes,Yes,TN,5,No Comment
+2025-03-20,21:59,8770,Speeding,943,Yes,Yes,DL,7,No Comment
+2025-07-10,04:35,1982,No Helmet,1187,No,Yes,UP,6,No Comment
+2025-07-30,11:55,7929,Red Light Jump,4926,Yes,Yes,MH,10,No Comment
+2025-02-23,18:32,4485,Speeding,1146,Yes,Yes,WB,14,No Comment
+2025-10-12,11:07,5564,No Helmet,1119,No,Yes,UP,13,Refused to pay
+2025-11-11,21:41,1430,No Helmet,1036,No,Yes,DL,3,No Comment
+2025-06-08,10:22,1100,Speeding,973,Yes,Yes,UP,11,No Comment
+2025-03-14,23:40,1502,Speeding,1171,Yes,Yes,WB,7,No Comment
+2025-06-24,05:23,6105,No Seatbelt,1190,Yes,No,UP,2,Refused to pay
+2025-03-21,05:48,1815,No Seatbelt,1039,Yes,No,KA,11,No Comment
+2025-11-07,14:26,5475,Speeding,1162,Yes,Yes,DL,6,No Comment
+2025-05-26,21:43,8972,No Helmet,1057,No,Yes,DL,4,No Comment
+2025-11-03,01:00,4349,Speeding,1008,Yes,Yes,WB,13,No Comment
+2025-06-17,03:00,9149,No Seatbelt,989,Yes,No,WB,7,No Comment
+2025-04-28,16:35,6802,Speeding,921,Yes,Yes,KA,1,No Comment
+2025-02-09,10:36,8033,No Helmet,1113,No,Yes,MH,2,No Comment
+2025-06-16,05:51,8538,Drunk Driving,10085,Yes,Yes,DL,7,Refused to pay
+2025-05-05,13:37,7560,No Helmet,1102,No,Yes,MH,12,No Comment
+2025-06-20,05:04,9363,No Helmet,1171,No,Yes,UP,4,First time offender
+2025-06-28,11:46,3419,Speeding,974,Yes,Yes,MH,4,No Comment
+2025-03-20,20:04,3902,Red Light Jump,5152,Yes,Yes,KA,13,No Comment
+2025-10-24,14:43,6295,Red Light Jump,5061,Yes,Yes,WB,8,No Comment
+2025-08-15,20:19,5500,No Helmet,1080,No,Yes,UP,2,No Comment
+2025-08-20,01:03,7041,Drunk Driving,9939,Yes,Yes,TN,14,First time offender
+2025-02-16,19:38,9307,Speeding,1197,Yes,Yes,UP,13,Caught on camera
+2025-01-22,14:58,4084,Speeding,1143,Yes,Yes,UP,3,First time offender
+2025-08-19,03:51,6626,Red Light Jump,4943,Yes,Yes,UP,11,No Comment
+2025-05-07,22:28,8199,No Helmet,981,No,Yes,MH,6,First time offender
+2025-07-18,13:49,6543,No Seatbelt,926,Yes,No,TN,11,No Comment
+2025-06-18,03:35,7333,Speeding,976,Yes,Yes,MH,2,No Comment
+2025-03-14,11:19,7421,Speeding,943,Yes,Yes,MH,9,No Comment
+2025-06-18,04:42,9624,Speeding,1116,Yes,Yes,UP,6,No Comment
+2025-06-08,05:13,6598,Red Light Jump,5148,Yes,Yes,WB,4,First time offender
+2025-03-21,02:18,2657,No Helmet,1176,No,Yes,TN,15,No Comment
+2025-12-05,10:56,3147,No Helmet,978,No,Yes,WB,3,Refused to pay
+2025-11-16,05:46,8170,Speeding,1086,Yes,Yes,TN,12,No Comment
+2025-08-16,19:18,8355,Speeding,1022,Yes,Yes,MH,13,Caught on camera
+2025-04-10,11:43,8218,No Helmet,1044,No,Yes,KA,9,No Comment
+2025-03-24,06:51,3267,Red Light Jump,4926,Yes,Yes,TN,8,Refused to pay
+2025-10-11,03:45,9452,Red Light Jump,5045,Yes,Yes,DL,13,No Comment
+2025-08-19,16:09,8167,Speeding,1013,Yes,Yes,KA,15,No Comment
+2025-01-14,13:03,7495,No Helmet,1020,No,Yes,KA,2,No Comment
+2025-01-15,10:59,2623,Drunk Driving,10071,Yes,Yes,WB,3,No Comment
+2025-08-30,22:53,3273,No Seatbelt,1140,Yes,No,KA,10,No Comment
+2025-02-10,00:16,4533,Drunk Driving,10180,Yes,Yes,TN,10,No Comment
+2025-02-26,09:15,5934,Speeding,1022,Yes,Yes,KA,11,Caught on camera
+2025-08-23,02:07,9189,No Helmet,908,No,Yes,TN,9,No Comment
+2025-03-15,09:27,1025,No Helmet,1023,No,Yes,UP,7,No Comment
+2025-12-09,02:33,6908,Speeding,1169,Yes,Yes,UP,9,Caught on camera
+2025-09-17,17:01,7397,Red Light Jump,4922,Yes,Yes,TN,7,First time offender
+2025-05-10,23:01,6850,No Seatbelt,1076,Yes,No,WB,12,No Comment
+2025-02-23,18:47,6447,Speeding,1080,Yes,Yes,UP,6,Refused to pay
+2025-03-31,21:29,8840,No Helmet,969,No,Yes,DL,12,Caught on camera
+2025-08-23,01:18,4302,Speeding,1002,Yes,Yes,DL,6,First time offender
+2025-09-21,12:52,9897,No Helmet,918,No,Yes,TN,4,No Comment
+2025-01-25,20:21,5476,Speeding,1088,Yes,Yes,KA,15,No Comment
+2025-08-14,12:21,4060,No Helmet,1154,No,Yes,MH,15,Caught on camera
+2025-05-17,02:46,7955,Speeding,992,Yes,Yes,UP,5,No Comment
+2025-02-10,10:42,5843,Speeding,1118,Yes,Yes,WB,12,No Comment
+2025-08-17,01:46,6776,No Helmet,1122,No,Yes,MH,11,First time offender
+2025-01-30,02:42,7655,Speeding,981,Yes,Yes,DL,3,Refused to pay
+2025-12-14,14:02,3068,Speeding,1087,Yes,Yes,MH,7,First time offender
+2025-01-17,19:09,8371,Red Light Jump,5090,Yes,Yes,KA,13,No Comment
+2025-03-12,16:23,7521,Speeding,1042,Yes,Yes,WB,2,No Comment
+2025-04-06,15:33,7340,Red Light Jump,4960,Yes,Yes,MH,13,No Comment
+2025-08-17,06:39,5678,No Seatbelt,1151,Yes,No,WB,2,No Comment
+2025-02-07,14:11,8292,Red Light Jump,5063,Yes,Yes,TN,6,Caught on camera
+2025-10-09,17:18,5914,Red Light Jump,4989,Yes,Yes,MH,9,No Comment
+2025-04-13,04:15,9094,Speeding,1183,Yes,Yes,UP,6,No Comment
+2025-10-10,04:39,2412,Speeding,1103,Yes,Yes,TN,12,No Comment
+2025-07-30,13:52,2208,Speeding,1062,Yes,Yes,TN,2,No Comment
+2025-12-15,16:22,3102,Red Light Jump,5182,Yes,Yes,TN,10,No Comment
+2025-03-08,13:32,1907,Drunk Driving,10165,Yes,Yes,WB,5,No Comment
+2025-06-15,22:14,6669,Red Light Jump,5165,Yes,Yes,MH,14,No Comment
+2025-04-11,20:35,5496,Speeding,1055,Yes,Yes,UP,9,No Comment
+2025-11-25,05:37,3526,Speeding,1072,Yes,Yes,UP,1,Refused to pay
+2025-01-15,02:02,5336,No Seatbelt,1192,Yes,No,KA,10,No Comment
+2025-09-12,20:34,5745,No Helmet,1054,No,Yes,KA,4,Refused to pay
+2025-12-17,12:19,8430,Speeding,930,Yes,Yes,WB,8,No Comment
+2025-08-26,06:21,3353,Speeding,1063,Yes,Yes,TN,14,No Comment
+2025-07-24,04:48,7070,No Helmet,954,No,Yes,MH,4,No Comment
+2025-05-17,14:15,3308,Speeding,1048,Yes,Yes,KA,14,No Comment
+2025-05-08,05:52,6364,Red Light Jump,5060,Yes,Yes,WB,13,No Comment
+2025-09-21,14:31,6055,No Helmet,946,No,Yes,KA,9,No Comment
+2025-05-04,06:37,6781,Speeding,1044,Yes,Yes,KA,10,Refused to pay
+2025-12-01,21:30,5681,No Helmet,955,No,Yes,KA,3,Refused to pay
+2025-07-07,12:23,1741,No Helmet,1191,No,Yes,UP,4,No Comment
+2025-05-28,02:24,9261,No Helmet,1181,No,Yes,MH,14,First time offender
+2025-12-15,19:07,3108,Red Light Jump,5101,Yes,Yes,MH,13,First time offender
+2025-10-13,11:48,3363,Speeding,1160,Yes,Yes,KA,9,No Comment
+2025-01-20,04:45,6456,Drunk Driving,10165,Yes,Yes,KA,3,No Comment
+2025-09-21,04:20,6218,Speeding,1053,Yes,Yes,UP,6,No Comment
+2025-09-18,17:31,5911,No Helmet,908,No,Yes,MH,6,No Comment
+2025-08-02,18:19,1436,No Helmet,1035,No,Yes,TN,13,First time offender
+2025-10-24,18:14,1841,No Helmet,987,No,Yes,UP,11,Caught on camera
+2025-07-14,04:52,4968,Speeding,956,Yes,Yes,WB,1,No Comment
+2025-08-03,04:26,4340,No Helmet,1141,No,Yes,TN,12,No Comment
+2025-03-12,16:13,6325,Red Light Jump,5144,Yes,Yes,UP,7,No Comment
+2025-03-30,14:58,9734,Speeding,1081,Yes,Yes,TN,13,Refused to pay
+2025-12-15,20:51,5331,No Helmet,998,No,Yes,WB,5,No Comment
+2025-04-26,09:49,5735,No Seatbelt,1150,Yes,No,MH,8,No Comment
+2025-05-21,09:07,9899,Speeding,1102,Yes,Yes,MH,13,Refused to pay
+2025-05-29,01:18,2294,Speeding,1126,Yes,Yes,TN,5,Caught on camera
+2025-04-20,06:52,9824,Speeding,1187,Yes,Yes,TN,5,No Comment
+2025-11-12,23:37,4920,Speeding,1171,Yes,Yes,WB,11,No Comment
+2025-02-21,13:21,8739,Speeding,970,Yes,Yes,DL,9,First time offender
+2025-03-22,13:41,8793,No Helmet,1002,No,Yes,MH,6,No Comment
+2025-01-31,02:41,4804,No Helmet,919,No,Yes,WB,7,Refused to pay
+2025-04-01,01:53,7504,No Seatbelt,995,Yes,No,TN,14,First time offender
+2025-01-20,00:19,2758,Red Light Jump,5071,Yes,Yes,MH,8,First time offender
+2025-10-06,16:31,3198,Red Light Jump,5139,Yes,Yes,MH,4,Refused to pay
+2025-06-19,05:46,8518,No Helmet,995,No,Yes,DL,12,No Comment
+2025-06-01,18:43,4164,Speeding,1107,Yes,Yes,KA,9,No Comment
+2025-07-25,21:06,4027,Red Light Jump,5144,Yes,Yes,MH,15,No Comment
+2025-05-14,12:15,8319,No Seatbelt,1068,Yes,No,MH,10,Caught on camera
+2025-01-06,08:41,6890,No Seatbelt,931,Yes,No,TN,2,No Comment
+2025-03-23,12:43,9233,Red Light Jump,5059,Yes,Yes,TN,2,No Comment
+2025-06-01,11:39,4618,Speeding,968,Yes,Yes,KA,3,No Comment
+2025-11-07,11:26,9998,Red Light Jump,5175,Yes,Yes,TN,14,No Comment
+2025-05-07,21:48,2341,No Helmet,1170,No,Yes,TN,6,No Comment
+2025-10-16,03:03,9972,Red Light Jump,5003,Yes,Yes,UP,9,No Comment
+2025-06-17,16:28,2904,No Seatbelt,1198,Yes,No,KA,2,Refused to pay
+2025-08-17,01:29,3161,No Helmet,1133,No,Yes,UP,1,No Comment
+2025-12-11,09:46,1356,Speeding,901,Yes,Yes,TN,4,No Comment
+2025-01-24,13:22,2044,No Helmet,930,No,Yes,DL,15,No Comment
+2025-05-27,13:11,3218,No Seatbelt,1115,Yes,No,MH,15,No Comment
+2025-07-13,12:05,9835,Speeding,1078,Yes,Yes,DL,3,First time offender
+2025-07-21,16:08,4648,Drunk Driving,9911,Yes,Yes,MH,8,No Comment
+2025-10-06,13:34,7214,Drunk Driving,10026,Yes,Yes,KA,6,No Comment
+2025-04-07,23:48,2848,Speeding,1114,Yes,Yes,UP,13,First time offender
+2025-01-09,07:13,2102,Speeding,917,Yes,Yes,KA,10,No Comment
+2025-01-25,07:47,1724,No Helmet,1019,No,Yes,UP,4,Caught on camera
+2025-01-29,04:32,5739,Speeding,1194,Yes,Yes,MH,10,No Comment
+2025-12-11,10:15,5944,Red Light Jump,5166,Yes,Yes,WB,7,No Comment
+2025-02-01,17:37,3869,No Helmet,1118,No,Yes,UP,8,No Comment
+2025-06-26,20:42,7244,No Seatbelt,1063,Yes,No,TN,7,No Comment
+2025-06-03,12:11,9813,No Helmet,1015,No,Yes,MH,14,Caught on camera
+2025-08-26,01:35,7761,Red Light Jump,5185,Yes,Yes,UP,3,No Comment
+2025-05-11,06:21,2295,Red Light Jump,5089,Yes,Yes,DL,9,Caught on camera
+2025-04-08,01:17,7179,No Seatbelt,920,Yes,No,DL,4,Refused to pay
+2025-10-28,23:42,4555,No Helmet,1070,No,Yes,MH,15,No Comment
+2025-04-08,23:07,8846,Red Light Jump,5004,Yes,Yes,KA,15,No Comment
+2025-06-14,09:24,8639,No Helmet,1083,No,Yes,MH,5,No Comment
+2025-09-12,14:06,8692,No Seatbelt,1063,Yes,No,WB,6,No Comment
+2025-01-24,18:55,4625,No Seatbelt,908,Yes,No,MH,9,First time offender
+2025-10-24,23:26,5836,Speeding,1068,Yes,Yes,WB,7,No Comment
+2025-05-06,15:35,6530,Speeding,1150,Yes,Yes,TN,11,Caught on camera
+2025-08-24,05:46,6770,Speeding,1179,Yes,Yes,KA,3,First time offender
+2025-10-05,20:03,9584,Speeding,938,Yes,Yes,TN,1,Caught on camera
+2025-07-31,04:53,4791,Speeding,977,Yes,Yes,DL,4,No Comment
+2025-07-11,01:39,8916,No Seatbelt,908,Yes,No,DL,9,No Comment
+2025-01-07,00:33,5501,No Helmet,1046,No,Yes,DL,9,Refused to pay
+2025-12-12,13:51,3937,Speeding,949,Yes,Yes,UP,3,No Comment
+2025-11-14,16:16,6807,Speeding,1103,Yes,Yes,DL,6,First time offender
+2025-08-24,18:15,4700,Speeding,941,Yes,Yes,TN,14,No Comment
+2025-01-17,02:25,7213,Speeding,1143,Yes,Yes,DL,11,No Comment
+2025-03-29,02:31,8109,No Helmet,1069,No,Yes,UP,14,First time offender
+2025-09-28,01:14,4463,Red Light Jump,5190,Yes,Yes,KA,5,No Comment
+2025-02-08,21:59,5593,Red Light Jump,5188,Yes,Yes,TN,1,No Comment
+2025-06-11,00:13,3362,No Seatbelt,1103,Yes,No,DL,5,No Comment
+2025-05-04,18:53,7375,No Seatbelt,1176,Yes,No,MH,7,Caught on camera
+2025-03-13,22:46,2284,No Helmet,1077,No,Yes,DL,2,No Comment
+2025-02-08,10:38,7499,Red Light Jump,5067,Yes,Yes,DL,11,No Comment
+2025-08-19,15:14,6829,No Helmet,1092,No,Yes,KA,3,No Comment
+2025-12-05,12:05,5839,No Seatbelt,937,Yes,No,DL,5,No Comment
+2025-12-31,20:09,7383,Speeding,954,Yes,Yes,DL,1,First time offender
+2025-08-16,11:48,5419,Speeding,944,Yes,Yes,WB,7,No Comment
+2025-10-12,16:26,2692,Speeding,1081,Yes,Yes,UP,2,No Comment
+2025-06-16,12:00,5781,No Helmet,943,No,Yes,TN,15,No Comment
+2025-05-05,18:33,3778,No Seatbelt,986,Yes,No,WB,5,No Comment
+2025-09-10,04:04,3739,No Helmet,1115,No,Yes,MH,8,Caught on camera
+2025-07-04,08:15,9123,No Helmet,1000,No,Yes,KA,2,No Comment
+2025-01-04,12:21,7224,Drunk Driving,10068,Yes,Yes,KA,6,No Comment
+2025-11-30,19:08,5922,Speeding,1002,Yes,Yes,KA,6,No Comment
+2025-07-23,10:18,9044,Red Light Jump,5024,Yes,Yes,MH,7,No Comment
+2025-07-21,11:07,4273,No Helmet,1179,No,Yes,WB,11,Caught on camera
+2025-01-14,23:29,4434,No Helmet,1049,No,Yes,TN,2,Refused to pay
+2025-07-29,21:31,3280,No Helmet,1023,No,Yes,MH,11,No Comment
+2025-08-05,12:04,8357,Red Light Jump,5145,Yes,Yes,UP,7,No Comment
+2025-12-21,13:34,1602,No Seatbelt,1084,Yes,No,TN,15,Refused to pay
+2025-11-01,20:58,2392,Speeding,1027,Yes,Yes,TN,11,No Comment
+2025-11-28,19:02,7547,Red Light Jump,5069,Yes,Yes,KA,2,No Comment
+2025-05-13,07:32,9499,No Helmet,1194,No,Yes,WB,8,No Comment
+2025-08-26,21:37,9199,Speeding,912,Yes,Yes,KA,2,No Comment
+2025-02-13,03:53,3321,Speeding,1075,Yes,Yes,KA,13,No Comment
+2025-09-05,11:30,2599,No Helmet,1131,No,Yes,MH,2,No Comment
+2025-12-30,03:01,6620,No Helmet,984,No,Yes,TN,4,No Comment
+2025-10-10,05:21,7985,Red Light Jump,5018,Yes,Yes,KA,11,No Comment
+2025-11-24,21:27,7481,Speeding,1001,Yes,Yes,KA,10,No Comment
+2025-01-03,22:13,4371,Speeding,932,Yes,Yes,UP,2,Caught on camera
+2025-10-02,05:23,6340,Speeding,958,Yes,Yes,MH,11,Refused to pay
+2025-09-28,20:20,7367,No Helmet,1200,No,Yes,DL,6,No Comment
+2025-08-23,19:11,5873,Red Light Jump,4943,Yes,Yes,TN,3,No Comment
+2025-05-03,09:07,3999,Speeding,972,Yes,Yes,UP,7,No Comment
+2025-03-12,18:24,7931,Speeding,1175,Yes,Yes,TN,15,No Comment
+2025-03-30,17:10,9022,Speeding,995,Yes,Yes,MH,14,No Comment
+2025-01-28,11:00,8939,Speeding,1096,Yes,Yes,UP,9,No Comment
+2025-07-29,21:31,7809,No Seatbelt,1127,Yes,No,KA,3,No Comment
+2025-01-16,07:18,1535,Speeding,1175,Yes,Yes,MH,3,Caught on camera
+2025-10-17,23:49,9115,No Helmet,957,No,Yes,UP,2,No Comment
+2025-10-06,11:34,1681,No Seatbelt,1125,Yes,No,UP,4,First time offender
+2025-02-22,23:53,5055,Speeding,916,Yes,Yes,KA,5,No Comment
+2025-02-14,14:55,2923,No Seatbelt,1021,Yes,No,WB,13,Caught on camera
+2025-12-19,11:55,8015,Speeding,971,Yes,Yes,WB,14,No Comment
+2025-01-31,18:22,9720,Speeding,1175,Yes,Yes,WB,6,First time offender
+2025-05-30,09:36,5380,Red Light Jump,5163,Yes,Yes,TN,14,No Comment
+2025-07-30,01:17,3078,No Seatbelt,967,Yes,No,WB,3,Caught on camera
+2025-05-07,21:25,9019,Speeding,1037,Yes,Yes,TN,7,No Comment
+2025-02-08,20:50,2525,No Helmet,1042,No,Yes,TN,15,Refused to pay
+2025-08-21,15:20,1040,Red Light Jump,4947,Yes,Yes,TN,8,No Comment
+2025-12-24,11:54,2037,No Seatbelt,1103,Yes,No,WB,7,Refused to pay
+2025-09-11,08:20,5646,Speeding,1195,Yes,Yes,WB,10,Refused to pay
+2025-06-25,21:48,1793,Speeding,1135,Yes,Yes,DL,2,First time offender
+2025-03-22,14:29,1011,Red Light Jump,5119,Yes,Yes,WB,12,First time offender
+2025-11-29,09:10,5489,Speeding,1084,Yes,Yes,MH,2,No Comment
+2025-11-29,05:03,7493,No Helmet,1019,No,Yes,KA,11,No Comment
+2025-02-18,00:13,8812,Speeding,1015,Yes,Yes,UP,11,No Comment
+2025-01-05,22:21,2975,Red Light Jump,5116,Yes,Yes,TN,3,No Comment
+2025-04-28,12:05,2678,Speeding,1088,Yes,Yes,MH,3,No Comment
+2025-03-10,20:43,3340,Speeding,1188,Yes,Yes,DL,10,No Comment
+2025-08-14,11:46,4490,No Helmet,977,No,Yes,KA,10,No Comment
+2025-04-22,02:57,2646,Speeding,963,Yes,Yes,UP,12,No Comment
+2025-08-08,10:50,3290,Speeding,943,Yes,Yes,WB,9,No Comment
+2025-11-08,09:49,1439,Drunk Driving,10054,Yes,Yes,WB,9,No Comment
+2025-04-07,23:25,5842,No Helmet,1022,No,Yes,KA,7,No Comment
+2025-09-13,20:38,2163,No Helmet,906,No,Yes,MH,15,No Comment
+2025-07-18,18:26,6986,No Helmet,988,No,Yes,KA,13,No Comment
+2025-10-28,02:00,5295,Speeding,930,Yes,Yes,KA,9,No Comment
+2025-12-31,16:49,7806,No Helmet,1105,No,Yes,DL,11,No Comment
+2025-11-12,04:17,2369,Speeding,1161,Yes,Yes,WB,13,No Comment
+2025-06-17,12:37,2083,Speeding,1123,Yes,Yes,TN,14,No Comment
+2025-05-06,02:59,8118,Speeding,928,Yes,Yes,MH,11,Caught on camera
+2025-03-31,03:00,3248,No Seatbelt,983,Yes,No,KA,6,No Comment
+2025-05-13,05:23,3079,No Seatbelt,1037,Yes,No,TN,15,No Comment
+2025-01-16,10:51,8034,Speeding,932,Yes,Yes,MH,12,First time offender
+2025-11-18,02:31,8457,No Helmet,928,No,Yes,KA,14,No Comment
+2025-07-08,05:16,2685,Red Light Jump,4959,Yes,Yes,WB,12,No Comment
+2025-01-23,00:15,1753,No Helmet,1096,No,Yes,WB,3,First time offender
+2025-01-19,17:51,7870,Speeding,1027,Yes,Yes,KA,15,Caught on camera
+2025-05-19,02:36,7108,Speeding,926,Yes,Yes,WB,4,Refused to pay
+2025-01-24,12:04,8620,Red Light Jump,5059,Yes,Yes,MH,2,No Comment
+2025-01-05,11:12,5777,No Helmet,1055,No,Yes,TN,10,No Comment
+2025-07-08,18:31,4201,No Seatbelt,1179,Yes,No,WB,3,No Comment
+2025-07-29,00:14,9872,Speeding,904,Yes,Yes,MH,1,Caught on camera
+2025-07-12,23:46,6038,Speeding,1171,Yes,Yes,WB,7,No Comment
+2025-01-31,04:45,5584,Speeding,1018,Yes,Yes,UP,7,Caught on camera
+2025-07-10,14:47,2391,No Helmet,1158,No,Yes,WB,11,Refused to pay
+2025-02-08,18:36,2020,No Helmet,966,No,Yes,WB,5,No Comment
+2025-06-11,12:44,6345,Speeding,1039,Yes,Yes,WB,2,First time offender
+2025-03-11,18:06,3546,Speeding,1130,Yes,Yes,KA,6,No Comment
+2025-10-02,11:49,4401,No Helmet,1137,No,Yes,MH,14,No Comment
+2025-03-22,21:19,1660,Speeding,1067,Yes,Yes,WB,2,Caught on camera
+2025-07-02,12:32,1802,No Seatbelt,1033,Yes,No,WB,1,First time offender
+2025-08-20,17:47,5093,Speeding,952,Yes,Yes,WB,2,No Comment
+2025-04-24,04:12,7563,Speeding,943,Yes,Yes,UP,10,No Comment
+2025-02-08,00:04,4239,Red Light Jump,5127,Yes,Yes,WB,2,First time offender
+2025-06-19,03:02,8552,Speeding,1193,Yes,Yes,KA,14,Caught on camera
+2025-09-12,00:24,7990,Speeding,1009,Yes,Yes,WB,5,No Comment
+2025-03-18,01:39,5026,No Helmet,1155,No,Yes,KA,15,No Comment
+2025-02-01,02:17,7275,Speeding,1002,Yes,Yes,TN,15,Caught on camera
+2025-05-08,20:51,9907,No Seatbelt,1095,Yes,No,TN,6,No Comment
+2025-09-06,11:58,9231,Speeding,1038,Yes,Yes,WB,1,No Comment
+2025-04-23,00:57,5602,Speeding,1141,Yes,Yes,UP,6,Caught on camera
+2025-04-30,05:06,5060,No Seatbelt,1036,Yes,No,UP,14,Caught on camera
+2025-01-29,07:36,7363,Speeding,988,Yes,Yes,WB,4,No Comment
+2025-12-24,11:58,1462,No Seatbelt,1080,Yes,No,UP,10,No Comment
+2025-04-07,15:34,6063,Speeding,919,Yes,Yes,DL,1,No Comment
+2025-04-23,00:33,8831,Speeding,1003,Yes,Yes,WB,6,Caught on camera
+2025-06-15,01:01,3420,No Helmet,972,No,Yes,DL,14,No Comment
+2025-07-06,02:23,7481,No Helmet,1072,No,Yes,MH,6,No Comment
+2025-03-22,23:27,8982,No Helmet,989,No,Yes,TN,9,No Comment
+2025-11-11,11:14,3872,Speeding,1050,Yes,Yes,WB,3,Caught on camera
+2025-12-26,18:25,1530,Speeding,1062,Yes,Yes,UP,4,No Comment
+2025-02-23,15:09,6425,No Seatbelt,1021,Yes,No,MH,6,No Comment
+2025-02-15,22:42,6500,No Helmet,1035,No,Yes,WB,4,No Comment
+2025-06-29,08:50,2770,No Seatbelt,924,Yes,No,KA,8,Caught on camera
+2025-03-27,13:31,7204,Speeding,1092,Yes,Yes,DL,14,No Comment
+2025-10-23,20:48,4695,Speeding,937,Yes,Yes,DL,5,No Comment
+2025-05-14,03:04,6600,Speeding,1092,Yes,Yes,WB,12,No Comment
+2025-02-17,10:38,8909,No Seatbelt,1120,Yes,No,TN,3,No Comment
+2025-08-11,05:03,2659,Speeding,997,Yes,Yes,KA,12,No Comment
+2025-10-04,08:42,5612,Speeding,949,Yes,Yes,DL,7,No Comment
+2025-09-09,04:03,6911,Speeding,944,Yes,Yes,MH,14,No Comment
+2025-11-04,15:12,2589,Speeding,987,Yes,Yes,TN,5,First time offender
+2025-08-31,03:19,7512,No Helmet,1035,No,Yes,DL,11,No Comment
+2025-04-05,11:56,7249,Speeding,1128,Yes,Yes,DL,5,No Comment
+2025-05-15,07:53,5400,No Helmet,977,No,Yes,TN,11,No Comment
+2025-12-09,11:51,9871,No Helmet,1016,No,Yes,UP,1,Refused to pay
+2025-09-25,13:34,8779,No Helmet,1020,No,Yes,KA,5,No Comment
+2026-01-01,01:32,9467,Drunk Driving,9975,Yes,Yes,DL,13,No Comment
+2025-03-27,06:51,4157,Speeding,1116,Yes,Yes,DL,11,No Comment
+2025-11-18,04:53,5225,Speeding,934,Yes,Yes,DL,7,No Comment
+2025-10-10,10:54,5525,No Helmet,906,No,Yes,TN,10,No Comment
+2025-08-03,03:26,3451,Speeding,1198,Yes,Yes,DL,15,No Comment
+2025-02-21,09:55,9775,Red Light Jump,5110,Yes,Yes,MH,7,No Comment
+2025-10-20,19:30,1613,Speeding,1106,Yes,Yes,WB,10,No Comment
+2025-12-22,12:02,7484,Red Light Jump,5069,Yes,Yes,TN,4,No Comment
+2025-09-01,08:57,7102,Speeding,1055,Yes,Yes,MH,5,Refused to pay
+2025-12-23,21:06,4734,Speeding,1126,Yes,Yes,MH,5,Caught on camera
+2025-11-06,20:05,4079,No Helmet,1108,No,Yes,TN,8,Caught on camera
+2025-07-11,01:32,3604,Speeding,1159,Yes,Yes,KA,3,Caught on camera
+2025-09-26,18:01,3846,Speeding,1002,Yes,Yes,DL,4,No Comment
+2025-01-26,11:45,4262,Speeding,1137,Yes,Yes,UP,7,No Comment
+2025-03-05,21:01,4963,Speeding,1128,Yes,Yes,WB,14,No Comment
+2025-10-10,11:22,3679,Drunk Driving,10032,Yes,Yes,TN,14,No Comment
+2025-05-26,00:24,1813,Speeding,1192,Yes,Yes,WB,14,No Comment
+2025-04-26,21:13,5408,No Seatbelt,1162,Yes,No,DL,14,Caught on camera
+2025-12-16,00:30,3167,No Helmet,904,No,Yes,WB,5,No Comment
+2025-06-06,22:45,5511,No Helmet,1092,No,Yes,MH,8,No Comment
+2025-08-27,09:43,9530,Drunk Driving,10103,Yes,Yes,UP,2,No Comment
+2025-12-06,11:35,5631,Speeding,955,Yes,Yes,KA,2,No Comment
+2025-05-22,20:20,5536,Speeding,1052,Yes,Yes,WB,3,No Comment
+2025-05-04,01:51,7620,No Seatbelt,971,Yes,No,TN,1,No Comment
+2025-06-01,08:58,7857,No Helmet,918,No,Yes,UP,12,First time offender
+2025-04-08,10:46,4643,No Seatbelt,1143,Yes,No,TN,6,No Comment
+2025-03-29,21:56,3967,Speeding,1141,Yes,Yes,WB,12,No Comment
+2025-10-14,05:43,6499,No Seatbelt,1013,Yes,No,MH,4,Caught on camera
+2025-06-07,13:50,6428,Speeding,1199,Yes,Yes,MH,8,Refused to pay
+2025-08-29,01:55,2166,No Helmet,999,No,Yes,UP,2,Refused to pay
+2025-07-15,16:19,7768,Speeding,977,Yes,Yes,WB,4,No Comment
+2025-10-19,14:09,6183,Red Light Jump,4992,Yes,Yes,DL,8,No Comment
+2025-04-01,10:40,1950,Speeding,1040,Yes,Yes,WB,13,Caught on camera
+2025-10-23,05:31,2442,Speeding,1122,Yes,Yes,TN,7,No Comment
+2025-09-02,12:00,1618,No Helmet,1091,No,Yes,DL,15,No Comment
+2025-09-29,06:01,1067,No Helmet,1027,No,Yes,WB,12,Refused to pay
+2025-06-09,04:06,7284,No Helmet,1056,No,Yes,WB,2,Refused to pay
+2025-06-02,09:29,9524,No Helmet,1072,No,Yes,KA,15,No Comment
+2025-03-10,10:57,9031,Speeding,996,Yes,Yes,WB,15,First time offender
+2025-07-26,00:14,4675,No Seatbelt,967,Yes,No,WB,12,No Comment
+2025-09-16,05:07,7006,No Seatbelt,919,Yes,No,KA,15,No Comment
+2025-10-01,19:03,1785,No Seatbelt,910,Yes,No,DL,12,No Comment
+2025-08-16,12:07,9966,Speeding,978,Yes,Yes,WB,12,No Comment
+2025-01-05,09:26,2654,No Seatbelt,1038,Yes,No,UP,10,Caught on camera
+2025-08-03,03:32,2928,Speeding,954,Yes,Yes,KA,4,No Comment
+2025-05-15,16:12,6864,No Seatbelt,1051,Yes,No,WB,1,No Comment
+2025-04-17,22:59,8875,Speeding,901,Yes,Yes,DL,11,No Comment
+2025-02-26,18:42,9095,Speeding,946,Yes,Yes,UP,2,Caught on camera
+2025-02-21,08:41,4787,No Helmet,1051,No,Yes,MH,8,No Comment
+2025-03-31,01:54,5760,Speeding,1060,Yes,Yes,KA,12,No Comment
+2025-01-24,00:54,3267,No Seatbelt,987,Yes,No,MH,6,Refused to pay
+2025-11-15,08:56,2522,Speeding,1075,Yes,Yes,WB,2,No Comment

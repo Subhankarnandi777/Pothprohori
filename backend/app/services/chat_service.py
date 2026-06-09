@@ -7,7 +7,7 @@ from app.models.chat_history import ChatHistory
 
 # Add ai-services to sys.path
 sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "../../../ai-services")))
-from rag.pipeline import RAGPipeline
+from ingestion.pipeline import RAGPipeline
 
 pipeline = RAGPipeline()
 
@@ -196,10 +196,11 @@ class ChatService:
         if intent["is_direct_eligible"]:
             direct_answer = get_db_direct_answer(self.db, intent)
             
+        import json
         full_answer = []
         if direct_answer:
             full_answer.append(direct_answer)
-            yield f"data: {direct_answer}\n\n"
+            yield f"data: {json.dumps({'chunk': direct_answer})}\n\n"
         else:
             db_context = ""
             if len(intent["violations"]) > 0:
@@ -212,7 +213,7 @@ class ChatService:
             # Fall back to streaming RAG
             async for chunk in pipeline.stream(req.message, state=location_ctx, mode=req.mode, db_context=db_context):
                 full_answer.append(chunk)
-                yield f"data: {chunk}\n\n"
+                yield f"data: {json.dumps({'chunk': chunk})}\n\n"
                 
         # Persist user message & assistant reply
         self.db.add(ChatHistory(session_id=session_id, role="user", content=req.message))

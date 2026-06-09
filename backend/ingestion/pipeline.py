@@ -2,10 +2,10 @@
 Main RAG orchestrator.
 Flow: query → embed → retrieve → build prompt → LLM → return answer
 """
-from rag.retriever import Retriever
-from rag.embeddings import EmbeddingModel
+from rag.retrieve import Retriever
+from rag.embed import EmbeddingModel
 from llm.gemini_client import GeminiClient
-from llm.prompt_templates import build_system_prompt, build_user_prompt
+from rag.prompt import build_system_prompt, build_user_prompt
 
 class RAGPipeline:
     def __init__(self):

@@ -1,0 +1,242 @@
+[
+    [
+        "SL No.",
+        "Nature of Offence",
+        "Violation of Section of Motor Vehicle Act, 1988",
+        "Penal Section of Motor Vehicle Act, 1988 under which offence committed is to be compounded",
+        "Penal Measures"
+    ],
+    [
+        "1st Offence",
+        "2nd and subsequent offence"
+    ],
+    [
+        "1",
+        "Non Possession of DL,CF Permit, Insurance",
+        "130(1), (2), (3), & (4) and other offences where specifically no penalty is provided for the offence",
+        "177",
+        "Rs. 500/=",
+        "Rs. 1500/="
+    ],
+    [
+        "2",
+        "Holder of CC permit refuses to ply or carry passengers",
+        "",
+        "178(3)",
+        "Rs. 500/=",
+        ""
+    ],
+    [
+        "3",
+        "Disobedience of order given by the concerned authority",
+        "",
+        "179(1)",
+        "Rs. 2000/=",
+        ""
+    ],
+    [
+        "4",
+        "Withholds or gives false information to the concerned authority",
+        "",
+        "179(2)",
+        "Rs. 2000/=",
+        ""
+    ],
+    [
+        "5",
+        "Plying vehicle without effective and valid Driving Licence",
+        "3, 4 & 5",
+        "180 & 181",
+        "Rs. 5000/=",
+        ""
+    ],
+    [
+        "6",
+        "Driving by person disqualified for holding/ obtaining DL",
+        "",
+        "182(1)",
+        "Rs. 10000/=",
+        ""
+    ],
+    [
+        "7",
+        "Unauthorised alteration by OEM/dealer etc.",
+        "",
+        "182A(1)",
+        "Rs. 1,00,000/= per such motor vehicle",
+        ""
+    ],
+    [
+        "8",
+        "Unauthorised alteration of vehicle by owner",
+        "",
+        "182A(4)",
+        "Rs. 5000/= per such alteration",
+        ""
+    ],
+    [
+        "SL No.",
+        "Nature of Offence",
+        "Violation of Section of Motor Vehicle Act, 1988",
+        "Penal Section of Motor Vehicle Act, 1988 under which offence committed is to be compounded",
+        "Penal Measures"
+    ],
+    [
+        "1st Offence",
+        "2nd and subsequent offence"
+    ],
+    [
+        "9",
+        "Prohibition of registration and issuance of CF to oversized vehicle",
+        "62A",
+        "182B",
+        "Rs. 10000/=",
+        ""
+    ],
+    [
+        "10",
+        "Driving at excessive speed",
+        "112",
+        "183/1",
+        "(i) for LMV Rs. 1000/= (ii) for MGV/MPV/HGV/HP V Rs. 2000/=",
+        "(i) for LMV Rs. 2000/= (ii) for MGV/MPV/HGV/ HPV Rs. 4000/= DL of the driver shall be impounded u/s 206(4)"
+    ],
+    [
+        "11",
+        "Driving dangerously",
+        "",
+        "184",
+        "Rs. 5000/=",
+        "If committed within three years of previous similar offence, Rs. 10,000/="
+    ],
+    [
+        "12",
+        "Driving when mentally or physically unfit",
+        "",
+        "186",
+        "Rs. 1000/=",
+        "Rs. 2000/="
+    ],
+    [
+        "13",
+        "Unauthorized racing of speed",
+        "",
+        "189",
+        "Rs. 5000/=",
+        "Rs. 10000/="
+    ],
+    [
+        "14",
+        "Violation of standards prescribed in relation to road safety, control of noise and air pollution",
+        "",
+        "190(2)",
+        "Rs. 10000/= and the driver of the vehicle shall be disquilified for holding licence for a period of three months",
+        "Rs. 10000/= and the driver of the vehicle shall be disquilified for holding licence for a period of three months"
+    ],
+    [
+        "15",
+        "Plying vehicle without valid Registration of vehicle",
+        "39",
+        "192",
+        "Rs. 5000/=",
+        "Rs. 10000/="
+    ],
+    [
+        "16",
+        "Plying vehicle without valid Certificate of Fitness",
+        "56",
+        "192",
+        "Rs. 10000/=",
+        "Rs. 10000/="
+    ],
+    [
+        "17",
+        "Plying vehicle without valid permit",
+        "66",
+        "192A",
+        "Rs. 10000/=",
+        "Rs. 10000/="
+    ],
+    [
+        "18",
+        "Carrying excess load",
+        "113, 114",
+        "194, 194(1), 194(1A), 194(2)",
+        "Fine to be realized in terms of notification no. 2023-WT/3M/128/1997 (Part IIID) dated 30.07.2021 annexed herewith"
+    ],
+    [
+        "SL No.",
+        "Nature of Offence",
+        "Violation of Section of Motor Vehicle Act, 1988",
+        "Penal Section of Motor Vehicle Act, 1988 under which offence committed is to be compounded",
+        "Penal Measures"
+    ],
+    [
+        "1st Offence",
+        "2nd and subsequent offence"
+    ],
+    [
+        "19",
+        "Carrying excess passenger in transport vehicle",
+        "",
+        "194A",
+        "Rs. 200/= per excess passenger and offloading of excess passengers and arrangement of alternative transport for them by the offender",
+        ""
+    ],
+    [
+        "20",
+        "Use of safety belts by driver, seating passenger and children below 14 years",
+        "",
+        "194B",
+        "Rs. 1000/=",
+        ""
+    ],
+    [
+        "21",
+        "Violations of safety measures for two wheeler riders",
+        "128",
+        "194C",
+        "Rs. 1000/= and the offender shall be disquilified for holding driving licence for three",
+        ""
+    ],
+    [
+        "22",
+        "Not wearing protective headgear",
+        "129",
+        "194D",
+        "Rs. 1000/= and the offender shall be disquilified for holding driving licence for three",
+        ""
+    ],
+    [
+        "23",
+        "Failure to allow free passage to Emergency vehicles",
+        "",
+        "194E",
+        "Rs. 10000/=",
+        ""
+    ],
+    [
+        "24",
+        "Use of horns in silence zone",
+        "",
+        "194F",
+        "Rs. 1000/=",
+        "Rs. 2000/="
+    ],
+    [
+        "25",
+        "Nessecity for insurance against third party risk",
+        "146",
+        "196",
+        "Rs. 2000/=",
+        "Rs. 4000/="
+    ],
+    [
+        "26",
+        "Umauthorised interference with vehicles",
+        "",
+        "198",
+        "Rs. 1000/=",
+        ""
+    ]
+]

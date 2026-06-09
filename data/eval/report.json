@@ -1,0 +1,329 @@
+{
+  "summary": {
+    "total_cases": 10,
+    "overall_hit_rate": 0.1,
+    "overall_faithfulness": 0.2
+  },
+  "details": [
+    {
+      "case": {
+        "query": "I got caught driving without a helmet in Delhi. How much is the fine?",
+        "state": "Delhi",
+        "expected_section": "194D",
+        "expected_amount": 1000,
+        "category": "Basic Fine"
+      },
+      "answer": "In Delhi, the fine for driving without a helmet (Rider/Pillion Rider) is **Rs. 1,000**.",
+      "sources": [
+        {
+          "law_id": 14,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 11,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 13,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 1,
+        "reason": "The generated answer correctly states the fine amount of Rs. 1,000, which matches the ground truth. However, it does not mention the expected section (194D), leading to a hit_rate of 0. There are no hallucinations, so faithfulness is 1."
+      }
+    },
+    {
+      "case": {
+        "query": "What is the penalty for driving under the influence of alcohol for the first time in Maharashtra?",
+        "state": "Maharashtra",
+        "expected_section": "185",
+        "expected_amount": 10000,
+        "category": "DUI First Offense"
+      },
+      "answer": "For driving under the influence of alcohol for the first time in Maharashtra, the penalty is a fine of **\u20b910,000** and/or imprisonment for a term which may extend to six months. This is as per Section 185 of the Motor Vehicles Act.",
+      "sources": [
+        {
+          "law_id": 257,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 266,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 7,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 1,
+        "faithfulness": 1,
+        "reason": "The generated answer correctly identifies Section 185 and the fine amount of \u20b910,000 as per the ground truth. It also accurately includes the imprisonment detail which is part of Section 185 without hallucination."
+      }
+    },
+    {
+      "case": {
+        "query": "My friend was caught drunk driving again. He had a previous DUI. What is the fine?",
+        "state": "",
+        "expected_section": "185",
+        "expected_amount": 15000,
+        "category": "DUI Repeat Offense"
+      },
+      "answer": "For a second or subsequent drunk driving offence committed within three years of the previous similar offence, the fine is **\u20b915,000**. This is punishable under **Section 185 (b)** of the Motor Vehicles Act, 1988, and may also include imprisonment for a term which may extend to two years, or both.",
+      "sources": [
+        {
+          "law_id": 257,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 262,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 295,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 0,
+        "reason": "Eval failed."
+      }
+    },
+    {
+      "case": {
+        "query": "How much is the challan for jumping a red light in West Bengal?",
+        "state": "West Bengal",
+        "expected_section": "184",
+        "expected_amount": 500,
+        "category": "Traffic Signal"
+      },
+      "answer": "DriveLegal AI could not reach Gemini right now because the API quota was exceeded, the request timed out, or the network was unavailable.\n\nYour question: How much is the challan for jumping a red light in West Bengal?\n\nPlease try again later, or ask a direct fine lookup such as helmet, seatbelt, license, overspeeding, or drunk driving so DriveLegal can answer from the local database.",
+      "sources": [
+        {
+          "law_id": 25,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 264,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 267,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 0,
+        "reason": "Eval failed."
+      }
+    },
+    {
+      "case": {
+        "query": "I am 16 years old and I was caught driving a car. What is the penalty?",
+        "state": "",
+        "expected_section": "199A",
+        "expected_amount": 25000,
+        "category": "Juvenile Offense"
+      },
+      "answer": "DriveLegal AI could not reach Gemini right now because the API quota was exceeded, the request timed out, or the network was unavailable.\n\nYour question: I am 16 years old and I was caught driving a car. What is the penalty?\n\nPlease try again later, or ask a direct fine lookup such as helmet, seatbelt, license, overspeeding, or drunk driving so DriveLegal can answer from the local database.",
+      "sources": [
+        {
+          "law_id": 262,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 257,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 280,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 0,
+        "reason": "Eval failed."
+      }
+    },
+    {
+      "case": {
+        "query": "What happens if I use my mobile phone while driving?",
+        "state": "",
+        "expected_section": "184",
+        "expected_amount": 1000,
+        "category": "Distracted Driving"
+      },
+      "answer": "DriveLegal AI could not reach Gemini right now because the API quota was exceeded, the request timed out, or the network was unavailable.\n\nYour question: What happens if I use my mobile phone while driving?\n\nPlease try again later, or ask a direct fine lookup such as helmet, seatbelt, license, overspeeding, or drunk driving so DriveLegal can answer from the local database.",
+      "sources": [
+        {
+          "law_id": 259,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 179,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 80,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 0,
+        "reason": "Eval failed."
+      }
+    },
+    {
+      "case": {
+        "query": "Is there a fine for not wearing a seatbelt?",
+        "state": "",
+        "expected_section": "194B",
+        "expected_amount": 1000,
+        "category": "Seatbelt"
+      },
+      "answer": "DriveLegal AI could not reach Gemini right now because the API quota was exceeded, the request timed out, or the network was unavailable.\n\nYour question: Is there a fine for not wearing a seatbelt?\n\nPlease try again later, or ask a direct fine lookup such as helmet, seatbelt, license, overspeeding, or drunk driving so DriveLegal can answer from the local database.",
+      "sources": [
+        {
+          "law_id": 254,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 253,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 292,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 0,
+        "reason": "Eval failed."
+      }
+    },
+    {
+      "case": {
+        "query": "I was racing on a public road in Delhi. How much fine will I pay?",
+        "state": "Delhi",
+        "expected_section": "189",
+        "expected_amount": 5000,
+        "category": "Racing"
+      },
+      "answer": "DriveLegal AI could not reach Gemini right now because the API quota was exceeded, the request timed out, or the network was unavailable.\n\nYour question: I was racing on a public road in Delhi. How much fine will I pay?\n\nPlease try again later, or ask a direct fine lookup such as helmet, seatbelt, license, overspeeding, or drunk driving so DriveLegal can answer from the local database.",
+      "sources": [
+        {
+          "law_id": 265,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 18,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 3,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 0,
+        "reason": "Eval failed."
+      }
+    },
+    {
+      "case": {
+        "query": "What is the fine for an ambulance being blocked?",
+        "state": "",
+        "expected_section": "194E",
+        "expected_amount": 10000,
+        "category": "Emergency Vehicles"
+      },
+      "answer": "DriveLegal AI could not reach Gemini right now because the API quota was exceeded, the request timed out, or the network was unavailable.\n\nYour question: What is the fine for an ambulance being blocked?\n\nPlease try again later, or ask a direct fine lookup such as helmet, seatbelt, license, overspeeding, or drunk driving so DriveLegal can answer from the local database.",
+      "sources": [
+        {
+          "law_id": 261,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 16,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 295,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 0,
+        "reason": "Eval failed."
+      }
+    },
+    {
+      "case": {
+        "query": "Driving without a valid insurance. Penalty in Maharashtra?",
+        "state": "Maharashtra",
+        "expected_section": "196",
+        "expected_amount": 2000,
+        "category": "Insurance"
+      },
+      "answer": "DriveLegal AI could not reach Gemini right now because the API quota was exceeded, the request timed out, or the network was unavailable.\n\nYour question: Driving without a valid insurance. Penalty in Maharashtra?\n\nPlease try again later, or ask a direct fine lookup such as helmet, seatbelt, license, overspeeding, or drunk driving so DriveLegal can answer from the local database.",
+      "sources": [
+        {
+          "law_id": 266,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 258,
+          "section": "",
+          "url": ""
+        },
+        {
+          "law_id": 3,
+          "section": "",
+          "url": ""
+        }
+      ],
+      "evaluation": {
+        "hit_rate": 0,
+        "faithfulness": 0,
+        "reason": "Eval failed."
+      }
+    }
+  ]
+}
