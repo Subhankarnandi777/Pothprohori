@@ -1,4 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
+import { useLanguage } from '../context/LanguageContext';
+import LanguagePicker from '../components/LanguagePicker';
 import { chatApi, type ChatSession, type ChatHistoryMessage, type ChatSource } from '../utils/api';
 
 interface Message extends ChatHistoryMessage {
@@ -13,6 +15,7 @@ export default function Chat() {
   const [loading, setLoading] = useState(false);
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
+  const { language, t } = useLanguage();
 
   async function loadHistory(sessionId: string) {
     try {
@@ -65,7 +68,8 @@ export default function Chat() {
     try {
       const res = await chatApi.sendMessage({
         message: userMsg.content,
-        session_id: currentSessionId || undefined
+        session_id: currentSessionId || undefined,
+        language: language
       });
       
       const assistantMsg: Message = { 
@@ -120,7 +124,7 @@ export default function Chat() {
         <div className="flex-1 overflow-y-auto p-3 space-y-1.5">
           {sessions.length === 0 ? (
              <div className="text-center py-6">
-                <p className="text-xs text-on-surface-variant">No previous chats</p>
+                <p className="text-xs text-on-surface-variant">{t.noPrevChats}</p>
              </div>
           ) : (
             sessions.map(s => (
@@ -150,9 +154,12 @@ export default function Chat() {
           <div>
             <h1 className="font-extrabold text-primary text-lg flex items-center gap-2">
               <span className="material-symbols-outlined text-secondary text-base" style={{ fontVariationSettings: "'FILL' 1" }}>gavel</span>
-              Legal AI Assistant
+              {t.appName}
             </h1>
-            <p className="text-xs text-on-surface-variant mt-0.5 hidden sm:block">Ask anything about Indian traffic laws, fines, or rules.</p>
+            <p className="text-xs text-on-surface-variant mt-0.5 hidden sm:block">{t.appSubtitle}</p>
+          </div>
+          <div className="ml-auto shrink-0">
+            <LanguagePicker />
           </div>
         </div>
 
@@ -163,12 +170,12 @@ export default function Chat() {
               <div className="w-16 h-16 bg-secondary/10 rounded-2xl flex items-center justify-center mb-5 border border-secondary/20 shadow-sm">
                 <span className="material-symbols-outlined text-secondary text-3xl" style={{ fontVariationSettings: "'FILL' 1" }}>robot_2</span>
               </div>
-              <h2 className="text-xl font-extrabold text-primary mb-2">How can I help you?</h2>
+              <h2 className="text-xl font-extrabold text-primary mb-2">{t.greeting}</h2>
               <p className="text-sm text-on-surface-variant leading-relaxed">
-                I'm your AI traffic law expert. Ask me about a recent challan, state-specific rules, or fine amounts.
+                {t.greetingSubtitle}
               </p>
               <div className="mt-8 flex flex-col w-full gap-3">
-                {['What is the fine for driving without a helmet?', 'What are the rules for drunk driving in Delhi?', 'Explain Section 177 of the MV Act'].map(q => (
+                {t.suggestions.map((q: string) => (
                   <button 
                     key={q} 
                     onClick={() => setInput(q)}
@@ -184,7 +191,7 @@ export default function Chat() {
           {messages.map((m, i) => (
             <div key={i} className={`flex flex-col max-w-[90%] sm:max-w-[80%] ${m.role === 'user' ? 'self-end items-end ml-auto' : 'self-start items-start mr-auto'} animate-fade-in-up`}>
               <div className="flex items-center gap-2 mb-1.5 px-1 opacity-70">
-                <span className="text-[10px] font-bold uppercase tracking-wider">{m.role === 'user' ? 'You' : 'AI Assistant'}</span>
+                <span className="text-[10px] font-bold uppercase tracking-wider">{m.role === 'user' ? t.you : t.aiAssistant}</span>
               </div>
               
               <div className={`p-4 sm:p-5 rounded-2xl shadow-sm border ${
@@ -231,7 +238,7 @@ export default function Chat() {
               onKeyDown={e => e.key === 'Enter' && send()} 
               disabled={loading}
               className="focus-ring flex-1 pl-5 pr-14 py-4 rounded-2xl border border-outline-variant bg-surface-container-low text-sm font-medium text-on-surface placeholder:text-outline transition-all disabled:opacity-50" 
-              placeholder="Message Pothprohori AI..." 
+              placeholder={t.placeholder} 
             />
             <button 
               onClick={send} 
@@ -241,10 +248,11 @@ export default function Chat() {
               <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 1" }}>send</span>
             </button>
           </div>
-          <p className="text-center text-[10px] text-outline mt-3 hidden sm:block">AI can make mistakes. Always verify legal information with official government sources.</p>
+          <p className="text-center text-[10px] text-outline mt-3 hidden sm:block">{t.disclaimer}</p>
         </div>
       </div>
     </div>
   );
 }
+
 

@@ -1,45 +1,48 @@
 import { Link, useNavigate } from 'react-router-dom';
-
-const stats = [
-  { label: 'Laws Indexed', value: '500+' },
-  { label: 'States Covered', value: '28+' },
-  { label: 'AI Accuracy', value: '97%' },
-];
-
-const features = [
-  {
-    icon: 'psychology',
-    title: 'AI Legal Chat',
-    desc: 'Ask complex traffic law questions and receive instant, citation-backed answers powered by Gemini AI.',
-    link: '/app/chat',
-    linkText: 'Start a consultation',
-    accent: 'bg-secondary/10 text-secondary',
-    span: 'md:col-span-2',
-  },
-  {
-    icon: 'calculate',
-    title: 'Challan Calculator',
-    desc: 'Calculate exact fines based on vehicle type, violation, state, and repeat offenses.',
-    link: '/app/calculator',
-    linkText: 'Calculate fine',
-    accent: 'bg-amber-50 text-amber-600',
-    span: '',
-  },
-  {
-    icon: 'local_library',
-    title: 'Law Library',
-    desc: 'Browse Motor Vehicles Act, state-level traffic rules, and recent amendments in a structured format.',
-    link: '/app/library',
-    linkText: 'Browse library',
-    accent: 'bg-emerald-50 text-emerald-600',
-    span: 'md:col-span-3',
-  },
-];
+import { useLanguage } from '../context/LanguageContext';
+import LanguagePicker from '../components/LanguagePicker';
 
 const regions = ['Delhi', 'Maharashtra', 'Karnataka', 'West Bengal', 'Tamil Nadu', 'Telangana', 'Gujarat', 'Rajasthan'];
 
 export default function Landing() {
   const navigate = useNavigate();
+  const { t } = useLanguage();
+
+  const stats = [
+    { label: t.lawsIndexed, value: '500+' },
+    { label: t.statesCovered, value: '28+' },
+    { label: t.aiAccuracy, value: '97%' },
+  ];
+
+  const features = [
+    {
+      icon: 'psychology',
+      title: t.aiLegalChat,
+      desc: 'Ask complex traffic law questions and receive instant, citation-backed answers powered by Gemini AI.',
+      link: '/app/chat',
+      linkText: t.startConsult,
+      accent: 'bg-secondary/10 text-secondary',
+      span: 'md:col-span-2',
+    },
+    {
+      icon: 'calculate',
+      title: t.challanCalculator,
+      desc: 'Calculate exact fines based on vehicle type, violation, state, and repeat offenses.',
+      link: '/app/calculator',
+      linkText: t.calcFine,
+      accent: 'bg-amber-50 text-amber-600',
+      span: '',
+    },
+    {
+      icon: 'local_library',
+      title: t.lawLibraryTitle,
+      desc: 'Browse Motor Vehicles Act, state-level traffic rules, and recent amendments in a structured format.',
+      link: '/app/library',
+      linkText: t.browseLibrary,
+      accent: 'bg-emerald-50 text-emerald-600',
+      span: 'md:col-span-3',
+    },
+  ];
 
   return (
     <div className="min-h-screen flex flex-col bg-background text-on-background">
@@ -55,12 +58,13 @@ export default function Landing() {
           </Link>
 
           <div className="hidden md:flex items-center gap-6 text-sm font-medium text-on-surface-variant">
-            <Link to="/app/chat" className="hover:text-secondary transition-colors">AI Assistant</Link>
-            <Link to="/app/calculator" className="hover:text-secondary transition-colors">Challan Calculator</Link>
-            <Link to="/app/library" className="hover:text-secondary transition-colors">Law Library</Link>
+            <Link to="/app/chat" className="hover:text-secondary transition-colors">{t.aiAssistantNav}</Link>
+            <Link to="/app/calculator" className="hover:text-secondary transition-colors">{t.challanCalcNav}</Link>
+            <Link to="/app/library" className="hover:text-secondary transition-colors">{t.lawLibraryNav}</Link>
           </div>
 
           <div className="flex items-center gap-3">
+            <LanguagePicker />
             <Link to="/login" className="hidden sm:block text-sm font-medium text-on-surface-variant hover:text-secondary transition-colors px-3 py-2 rounded-lg hover:bg-surface-container-low">
               Sign in
             </Link>
@@ -87,7 +91,7 @@ export default function Landing() {
             </div>
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-primary leading-tight tracking-tight mb-6">
               Your AI Partner for<br />
-              <span className="gradient-text">Indian Traffic Laws</span>
+              <span className="gradient-text">{t.heroTitle2}</span>
             </h1>
             <p className="text-lg text-on-surface-variant leading-relaxed max-w-[576px] mb-8">
               Instant legal clarity on challans, sections, violations, and state-specific traffic regulations — backed by the Motor Vehicles Act.
@@ -126,8 +130,8 @@ export default function Landing() {
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-white border-y border-outline-variant/40">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-14">
-            <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">Comprehensive Legal Tools</h2>
-            <p className="text-on-surface-variant mt-3 text-base">Everything you need to navigate Indian traffic regulations.</p>
+            <h2 className="text-3xl sm:text-4xl font-extrabold text-primary tracking-tight">{t.comprehensiveTools}</h2>
+            <p className="text-on-surface-variant mt-3 text-base">{t.toolsSubtitle}</p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
             {features.map(f => (
@@ -149,15 +153,15 @@ export default function Landing() {
       {/* ── Regional Coverage ── */}
       <section className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
         <div className="max-w-7xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-primary tracking-tight mb-3">State-Specific Intelligence</h2>
-          <p className="text-on-surface-variant mb-10 text-base">Localized traffic law data calibrated for every Indian state.</p>
+          <h2 className="text-3xl font-extrabold text-primary tracking-tight mb-3">{t.stateIntelligence}</h2>
+          <p className="text-on-surface-variant mb-10 text-base">{t.stateIntelligenceDesc}</p>
           <div className="flex flex-wrap justify-center gap-3">
             {regions.map(r => (
               <span key={r} className="px-4 py-2 bg-white border border-outline-variant rounded-full text-sm font-medium text-on-surface shadow-sm hover:bg-surface-container-low transition-colors">
                 {r}
               </span>
             ))}
-            <span className="px-4 py-2 bg-secondary/10 border border-secondary/30 rounded-full text-sm font-medium text-secondary">+20 more states</span>
+            <span className="px-4 py-2 bg-secondary/10 border border-secondary/30 rounded-full text-sm font-medium text-secondary">{t.moreStates}</span>
           </div>
         </div>
       </section>
@@ -165,7 +169,7 @@ export default function Landing() {
       {/* ── CTA Banner ── */}
       <section className="py-16 px-4 sm:px-6 lg:px-8 bg-primary">
         <div className="max-w-3xl mx-auto text-center">
-          <h2 className="text-3xl font-extrabold text-white mb-4">Ready to understand your traffic rights?</h2>
+          <h2 className="text-3xl font-extrabold text-white mb-4">{t.ctaTitle}</h2>
           <p className="text-white/75 mb-8">Join thousands of citizens using Pothprohori for instant legal clarity.</p>
           <button
             onClick={() => navigate('/register')}
@@ -185,7 +189,7 @@ export default function Landing() {
             </div>
             Pothprohori
           </div>
-          <p>For educational purposes. Verify with official government sources.</p>
+          <p>{t.footerDisclaimer}</p>
           <p>© 2026 Pothprohori. All rights reserved.</p>
         </div>
       </footer>

@@ -1,11 +1,6 @@
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
-
-const quickActions = [
-  { icon: 'chat', label: 'Ask AI', desc: 'Get legal answers instantly', to: '/app/chat', color: 'bg-secondary/10 text-secondary' },
-  { icon: 'calculate', label: 'Challan Calc', desc: 'Estimate your fine', to: '/app/calculator', color: 'bg-amber-50 text-amber-600' },
-  { icon: 'local_library', label: 'Law Library', desc: 'Browse 500+ rules', to: '/app/library', color: 'bg-emerald-50 text-emerald-600' },
-];
+import { useLanguage } from '../context/LanguageContext';
 
 const recentLaws = [
   { title: 'Motor Vehicles Act, 1988', section: 'Section 177', desc: 'General provisions and penalties for traffic violations.' },
@@ -16,6 +11,13 @@ const recentLaws = [
 export default function Home() {
   const navigate = useNavigate();
   const { username } = useAuth();
+  const { t } = useLanguage();
+
+  const quickActions = [
+    { icon: 'chat', label: t.askAI, desc: t.askAIDesc, to: '/app/chat', color: 'bg-secondary/10 text-secondary' },
+    { icon: 'calculate', label: t.challanCalc, desc: t.challanCalcDesc, to: '/app/calculator', color: 'bg-amber-50 text-amber-600' },
+    { icon: 'local_library', label: t.lawLibrary, desc: t.lawLibraryDesc, to: '/app/library', color: 'bg-emerald-50 text-emerald-600' },
+  ];
 
   return (
     <div className="max-w-5xl mx-auto px-4 sm:px-6 py-6 sm:py-8 space-y-8 animate-fade-in-up">
@@ -26,7 +28,7 @@ export default function Home() {
           <h1 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">
             Welcome back, <span className="gradient-text">{username || 'User'}</span> 👋
           </h1>
-          <p className="text-on-surface-variant text-sm mt-1.5">Your daily traffic law intelligence briefing.</p>
+          <p className="text-on-surface-variant text-sm mt-1.5">{t.dailyBriefing}</p>
         </div>
         <button
           onClick={() => navigate('/app/chat')}
@@ -39,7 +41,7 @@ export default function Home() {
 
       {/* ── Quick Actions ── */}
       <section>
-        <h2 className="text-sm font-semibold text-on-surface-variant uppercase tracking-wider mb-4">Quick Actions</h2>
+        <h2 className="text-sm font-semibold text-on-surface-variant uppercase tracking-wider mb-4">{t.quickActions}</h2>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
           {quickActions.map(action => (
             <button
@@ -63,10 +65,10 @@ export default function Home() {
       <section className="bento-card p-6 bg-linear-to-br from-primary/5 to-secondary/5">
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-4 text-center">
           {[
-            { value: '500+', label: 'Laws Indexed' },
-            { value: '28+', label: 'States Covered' },
-            { value: '97%', label: 'AI Accuracy' },
-            { value: '24/7', label: 'Available' },
+            { value: '500+', label: t.lawsIndexed },
+            { value: '28+', label: t.statesCovered },
+            { value: '97%', label: t.aiAccuracy },
+            { value: '24/7', label: t.available },
           ].map(stat => (
             <div key={stat.label}>
               <p className="text-2xl font-extrabold text-primary">{stat.value}</p>
@@ -79,7 +81,7 @@ export default function Home() {
       {/* ── Recent Laws ── */}
       <section>
         <div className="flex items-center justify-between mb-4">
-          <h2 className="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">Featured Laws</h2>
+          <h2 className="text-sm font-semibold text-on-surface-variant uppercase tracking-wider">{t.featuredLaws}</h2>
           <button onClick={() => navigate('/app/library')} className="text-xs text-secondary font-semibold hover:underline flex items-center gap-1">
             View all <span className="material-symbols-outlined text-xs">arrow_forward</span>
           </button>

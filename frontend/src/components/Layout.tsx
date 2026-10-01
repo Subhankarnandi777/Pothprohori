@@ -1,15 +1,20 @@
 import { Outlet, NavLink, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
+import { useLanguage } from '../context/LanguageContext';
+import LanguagePicker from './LanguagePicker';
 
-const navItems = [
-  { to: '/app/dashboard', icon: 'home', label: 'Home' },
-  { to: '/app/chat',      icon: 'chat',  label: 'Chat' },
-  { to: '/app/calculator',icon: 'calculate', label: 'Calc' },
-  { to: '/app/library',   icon: 'local_library', label: 'Library' },
-];
+// navItems are now generated dynamically inside the component using t
 
 export default function Layout() {
   const { username, logout } = useAuth();
+  const { t } = useLanguage();
+
+  const navItems = [
+    { to: "/app/dashboard", icon: "home", label: t.navHome },
+    { to: "/app/chat", icon: "chat", label: t.navChat },
+    { to: "/app/calculator", icon: "calculate", label: t.navCalc },
+    { to: "/app/library", icon: "local_library", label: t.navLibrary },
+  ];
   const navigate = useNavigate();
 
   return (
@@ -44,6 +49,7 @@ export default function Layout() {
 
         {/* User menu */}
         <div className="flex items-center gap-2">
+          <LanguagePicker />
           <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-surface-container-low border border-outline-variant text-sm text-on-surface-variant">
             <span className="material-symbols-outlined text-sm">account_circle</span>
             <span className="font-medium text-on-surface truncate max-w-30">{username}</span>
@@ -54,7 +60,7 @@ export default function Layout() {
             title="Sign out"
           >
             <span className="material-symbols-outlined text-sm">logout</span>
-            <span className="hidden sm:block">Sign out</span>
+            <span className="hidden sm:block">{t.signOut}</span>
           </button>
         </div>
       </header>

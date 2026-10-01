@@ -29,6 +29,8 @@ export async function fetchWithAuth(url: string, options: RequestInit = {}) {
 export interface ChatRequest {
   message: string;
   session_id?: string;
+  language?: string;
+  mode?: string;
   use_web_search?: boolean;
 }
 
@@ -102,4 +104,5 @@ export const chatApi = {
     return res.json();
   }
 };
+
 

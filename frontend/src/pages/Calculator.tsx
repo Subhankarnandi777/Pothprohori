@@ -1,12 +1,6 @@
 import { useState } from 'react';
+import { useLanguage } from '../context/LanguageContext';
 import { chatApi, type ChallanResponse } from '../utils/api';
-
-const vehicleTypes = [
-  { value: '2W', label: 'Two Wheeler', icon: 'two_wheeler' },
-  { value: '3W', label: 'Three Wheeler', icon: 'electric_rickshaw' },
-  { value: '4W', label: 'Four Wheeler', icon: 'directions_car' },
-  { value: 'HV', label: 'Heavy Vehicle', icon: 'local_shipping' },
-];
 
 const violations = [
   { value: 'no_helmet', label: 'Driving Without Helmet' },
@@ -25,6 +19,14 @@ const states = [
 ];
 
 export default function Calculator() {
+  const { t } = useLanguage();
+
+  const vehicleTypes = [
+    { value: '2W', label: t.twoWheeler, icon: 'two_wheeler' },
+    { value: '3W', label: t.threeWheeler, icon: 'electric_rickshaw' },
+    { value: '4W', label: t.fourWheeler, icon: 'directions_car' },
+    { value: 'HV', label: t.heavyVehicle, icon: 'local_shipping' },
+  ];
   const [vehicleType, setVehicleType] = useState('2W');
   const [violation, setViolation] = useState('no_helmet');
   const [stateName, setStateName] = useState('National');
@@ -50,14 +52,14 @@ export default function Calculator() {
   return (
     <div className="max-w-3xl mx-auto px-4 sm:px-6 py-6 sm:py-8 animate-fade-in-up">
       <div className="mb-7">
-        <h1 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">Challan Calculator</h1>
-        <p className="text-on-surface-variant text-sm mt-1.5">Calculate exact traffic fines based on state rules and vehicle type.</p>
+        <h1 className="text-2xl sm:text-3xl font-extrabold text-primary tracking-tight">{t.calcTitle}</h1>
+        <p className="text-on-surface-variant text-sm mt-1.5">{t.calcSubtitle}</p>
       </div>
 
       <div className="bento-card p-6 sm:p-8 space-y-7">
         {/* Vehicle Type */}
         <div>
-          <label className="block text-sm font-semibold text-on-surface mb-3">Vehicle Type</label>
+          <label className="block text-sm font-semibold text-on-surface mb-3">{t.vehicleType}</label>
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
             {vehicleTypes.map(v => (
               <button
@@ -80,7 +82,7 @@ export default function Calculator() {
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {/* Violation */}
           <div>
-            <label className="block text-sm font-semibold text-on-surface mb-1.5">Violation Type</label>
+            <label className="block text-sm font-semibold text-on-surface mb-1.5">{t.violationType}</label>
             <div className="relative">
               <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-sm">warning</span>
               <select
@@ -98,7 +100,7 @@ export default function Calculator() {
 
           {/* State */}
           <div>
-            <label className="block text-sm font-semibold text-on-surface mb-1.5">State / Region</label>
+            <label className="block text-sm font-semibold text-on-surface mb-1.5">{t.stateRegion}</label>
             <div className="relative">
               <span className="material-symbols-outlined absolute left-3.5 top-1/2 -translate-y-1/2 text-outline text-sm">location_on</span>
               <select
@@ -128,10 +130,10 @@ export default function Calculator() {
               {repeat && <span className="material-symbols-outlined text-white text-xs">check</span>}
             </div>
             <div className="text-left">
-              <p className="font-semibold text-sm">Repeat Offense</p>
-              <p className="text-xs opacity-70 mt-0.5">Fine is typically doubled for repeat offenders</p>
+              <p className="font-semibold text-sm">{t.repeatOffense}</p>
+              <p className="text-xs opacity-70 mt-0.5">{t.repeatDesc}</p>
             </div>
-            {repeat && <span className="ml-auto text-xs font-bold uppercase tracking-wide bg-amber-200 text-amber-800 px-2 py-0.5 rounded-full">Active</span>}
+            {repeat && <span className="ml-auto text-xs font-bold uppercase tracking-wide bg-amber-200 text-amber-800 px-2 py-0.5 rounded-full">{t.active}</span>}
           </button>
         </div>
 
@@ -171,19 +173,19 @@ export default function Calculator() {
         <div className="mt-6 bento-card p-6 sm:p-8 animate-fade-in-up border-l-4 border-amber-400">
           <div className="flex items-center gap-2 mb-5">
             <span className="material-symbols-outlined text-amber-500" style={{ fontVariationSettings: "'FILL' 1" }}>receipt_long</span>
-            <h2 className="font-bold text-on-surface text-lg">Challan Estimate</h2>
+            <h2 className="font-bold text-on-surface text-lg">{t.challanEstimate}</h2>
           </div>
 
           <div className="flex items-baseline gap-2 mb-6">
             <span className="text-5xl font-extrabold text-primary">₹{result.fine_inr.toLocaleString()}</span>
-            {repeat && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">Repeat Offense</span>}
+            {repeat && <span className="px-2 py-0.5 bg-amber-100 text-amber-700 text-xs font-bold rounded-full">{t.repeatOffense}</span>}
           </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 mb-5">
             {[
-              { label: 'Violation', value: result.violation, icon: 'warning' },
-              { label: 'Legal Section', value: result.section, icon: 'gavel' },
-              { label: 'Region', value: result.state, icon: 'location_on' },
+              { label: t.violation, value: result.violation, icon: 'warning' },
+              { label: t.legalSection, value: result.section, icon: 'gavel' },
+              { label: t.region, value: result.state, icon: 'location_on' },
             ].map(item => (
               <div key={item.label} className="p-3.5 bg-surface-container-low rounded-xl">
                 <div className="flex items-center gap-1.5 text-on-surface-variant text-xs mb-1.5">
@@ -197,7 +199,7 @@ export default function Calculator() {
 
           {result.explanation && (
             <div className="p-4 bg-blue-50 border border-blue-100 rounded-xl">
-              <p className="text-xs font-semibold text-secondary mb-1 uppercase tracking-wide">Legal Explanation</p>
+              <p className="text-xs font-semibold text-secondary mb-1 uppercase tracking-wide">{t.legalExplanation}</p>
               <p className="text-sm text-on-surface leading-relaxed">{result.explanation}</p>
             </div>
           )}
