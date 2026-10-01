@@ -9,6 +9,7 @@ from typing import List, Optional
 from app.schemas.chat import ChatRequest, ChatResponse, ChallanRequest, ChallanResponse
 from app.services.chat_service import ChatService
 from app.core.database import get_db
+from app.api.auth import get_current_user
 from tools.challan_tool import calculate_challan  # type: ignore
 
 router = APIRouter()
@@ -16,8 +17,16 @@ MAX_CHALLAN_IMAGE_SIZE = 5 * 1024 * 1024
 SUPPORTED_CHALLAN_IMAGE_TYPES = {"image/png", "image/jpeg", "image/jpg"}
 
 @router.post("/", response_model=ChatResponse)
-async def chat(request: ChatRequest, db: Session = Depends(get_db)):
+async def chat(request: ChatRequest, db: Session = Depends(get_db), current_user = Depends(get_current_user)):
     session_id = request.session_id or str(uuid.uuid4())
+    from app.models.chat_history import ChatSession
+    session = db.query(ChatSession).filter(ChatSession.id == session_id).first()
+    if not session:
+        title = request.message[:30] + "..." if len(request.message) > 30 else request.message
+        session = ChatSession(id=session_id, user_id=current_user.id if current_user else None, title=title)
+        db.add(session)
+        db.commit()
+
     try:
         service = ChatService(db)
         response = await service.handle(request, session_id)
@@ -28,8 +37,16 @@ async def chat(request: ChatRequest, db: Session = Depends(get_db)):
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.post("/stream")
-async def chat_stream(request: ChatRequest, db: Session = Depends(get_db)):
+async def chat_stream(request: ChatRequest, db: Session = Depends(get_db), current_user = Depends(get_current_user)):
     session_id = request.session_id or str(uuid.uuid4())
+    from app.models.chat_history import ChatSession
+    session = db.query(ChatSession).filter(ChatSession.id == session_id).first()
+    if not session:
+        title = request.message[:30] + "..." if len(request.message) > 30 else request.message
+        session = ChatSession(id=session_id, user_id=current_user.id if current_user else None, title=title)
+        db.add(session)
+        db.commit()
+        
     service = ChatService(db)
     return StreamingResponse(
         service.stream(request, session_id),
@@ -256,23 +273,58 @@ async def upload_document(
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
+from pydantic import BaseModel
+class RenameSessionRequest(BaseModel):
+    title: str
+
 @router.get("/sessions")
-def get_sessions(db: Session = Depends(get_db)):
+def get_sessions(db: Session = Depends(get_db), current_user = Depends(get_current_user)):
     try:
-        from app.models.chat_history import ChatHistory
-        sessions = db.query(ChatHistory.session_id).distinct().all()
-        return [s[0] for s in sessions if s[0]]
+        from app.models.chat_history import ChatSession
+        query = db.query(ChatSession)
+        if current_user:
+            query = query.filter(ChatSession.user_id == current_user.id)
+        else:
+            query = query.filter(ChatSession.user_id == None)
+            
+        sessions = query.order_by(ChatSession.created_at.desc()).all()
+        return [{"id": s.id, "title": s.title} for s in sessions]
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
+
+@router.patch("/sessions/{session_id}")
+def rename_session(session_id: str, req: RenameSessionRequest, db: Session = Depends(get_db), current_user = Depends(get_current_user)):
+    try:
+        from app.models.chat_history import ChatSession
+        session = db.query(ChatSession).filter(ChatSession.id == session_id).first()
+        if not session:
+            raise HTTPException(status_code=404, detail="Session not found")
+        if session.user_id and (not current_user or session.user_id != current_user.id):
+            raise HTTPException(status_code=403, detail="Not authorized to edit this session")
+            
+        session.title = req.title
+        db.commit()
+        return {"id": session.id, "title": session.title}
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
 
 @router.get("/history/{session_id}")
-def get_history(session_id: str, db: Session = Depends(get_db)):
+def get_history(session_id: str, db: Session = Depends(get_db), current_user = Depends(get_current_user)):
     try:
-        from app.models.chat_history import ChatHistory
+        from app.models.chat_history import ChatSession, ChatHistory
+        
+        session = db.query(ChatSession).filter(ChatSession.id == session_id).first()
+        if session and session.user_id and (not current_user or session.user_id != current_user.id):
+            raise HTTPException(status_code=403, detail="Not authorized to view this session")
+            
         history = db.query(ChatHistory).filter(ChatHistory.session_id == session_id).order_by(ChatHistory.created_at.asc()).all()
         return [
             {"role": h.role, "content": h.content, "created_at": h.created_at.isoformat() if h.created_at else None}
             for h in history
         ]
+    except HTTPException:
+        raise
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))

@@ -34,7 +34,7 @@ class Retriever:
 
     def _init_fallback_db(self):
         self.fallback_db = []
-        data_path = os.path.join(os.path.dirname(__file__), "../../data/processed/laws.json")
+        data_path = os.path.join(os.path.dirname(__file__), "../../data/violation_fines.json")
         if not os.path.exists(data_path):
             return
         try:
